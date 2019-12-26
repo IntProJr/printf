@@ -72,6 +72,14 @@ int				plus_flag(char *str);
 int				minus_flag(char *str);
 int				hash_flag(char *str);
 int				space_flag(char *str, int plus);
+
+/*
+ * char
+ */
+int				print_simple_char(int char_printed, t_printf p);
+
+
+
 /*
  * utilits
  */
