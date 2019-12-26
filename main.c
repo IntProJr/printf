@@ -3,7 +3,7 @@
 
 int main (int argc, char *argv[])
 {
-	printf("%d\n", 5);
+	//printf("%d\n", 5);
 	ft_printf("%d", 5);
 }
 

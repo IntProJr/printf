@@ -31,3 +31,59 @@ int 	zero_flag(char *str, int minus)
 	}
 	return (0);
 }
+
+int 	plus_flag(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if(str[i] == '+')
+			return(1);
+		i++;
+	}
+	return(0);
+}
+
+int 	minus_flag(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if(str[i] == '-')
+			return(1);
+		i++;
+	}
+	return(0);
+}
+
+int 	hash_flag(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if(str[i] == '#')
+			return(1);
+		i++;
+	}
+	return(0);
+}
+
+int 	space_flag(char *str, int plus)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == ' ' && !plus)
+			return (1);
+		i++;
+	}
+	return(0);
+}

@@ -68,7 +68,10 @@ int				print_width_minus(t_printf p, int char_printed);
 
 int				precision(char *str);
 int				zero_flag(char *str, int minus);
-
+int				plus_flag(char *str);
+int				minus_flag(char *str);
+int				hash_flag(char *str);
+int				space_flag(char *str, int plus);
 /*
  * utilits
  */
