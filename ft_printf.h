@@ -67,6 +67,7 @@ int				print_width_minus(t_printf p, int char_printed);
  */
 
 int				precision(char *str);
+int				zero_flag(char *str, int minus);
 
 /*
  * utilits
@@ -82,5 +83,5 @@ char			*ft_strndup(const char *src, size_t n);
 int 			ft_atoi(const char *str);
 void			*ft_memset(void *destination, int c, size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
-
+char			*ft_str_multi_chr(char *str, char *c);
 #endif //PRINTF_FT_PRINTF_H

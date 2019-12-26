@@ -1,0 +1,33 @@
+//
+// Created by Int Pro on 26.12.2019.
+//
+
+#include "../ft_printf.h"
+
+int 	zero_flag(char *str, int minus)
+{
+	int 	i;
+	char	*before;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '0' && !minus)
+		{
+			before = ft_strndup(str, i);
+			if (ft_str_multi_chr(before, "123456789") == NULL &&
+				!ft_strchr(before, '.'))
+			{
+				free(before);
+				return (1);
+			}
+			else
+			{
+				free(before);
+				return (0);
+			}
+		}
+		i++;
+	}
+	return (0);
+}

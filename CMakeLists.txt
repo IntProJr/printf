@@ -18,6 +18,7 @@ add_executable(printf ft_printf.c ft_printf.h parse.c main.c
 		utilits/ft_atoi.c
 		utilits/ft_longlong_len.c
 		utilits/ft_memset.c
+		utilits/ft_strcmp.c
 
 		numbers/print_di.c
 		numbers/print_number.c
@@ -26,4 +27,5 @@ add_executable(printf ft_printf.c ft_printf.h parse.c main.c
 		tools/print_flag.c
 		tools/print_padding.c
 		tools/length.c
-		tools/precision.c utilits/ft_strcmp.c)
+		tools/precision.c
+		tools/flag.c utilits/ft_str_multi_chr.c)
