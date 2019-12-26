@@ -54,6 +54,14 @@ static int 		print_d(va_list *arg, int char_printed, t_printf p);
 int				print_d_longlong(int char_printed, t_printf p, long long nb);
 
 
+size_t			ft_longlong_len(long long nbr);
+int				print_space(t_printf p, long long nb);
+int				print_plus(t_printf p, long long nb);
+int				print_width(t_printf p, int written);
+int				print_zero_padding(t_printf p, int char_printed);
+int				print_precision(t_printf p, long long nb, int nb_len);
+int				print_width_minus(t_printf p, int char_printed);
+
 
 void			ft_putchar(char c);
 char			*ft_strchr(const char *s, int c);
@@ -63,13 +71,7 @@ char 			*ft_strncpy(char *dst, const char *src, size_t len);
 size_t			ft_strlen(char *str);
 char			*ft_strndup(const char *src, size_t n);
 int 			ft_atoi(const char *str);
-size_t			ft_longlong_len(long long nbr);
-int				print_space(t_printf p, long long nb);
-int				print_plus(t_printf p, long long nb);
-int				print_width(t_printf p, int written);
-int				print_zero_padding(t_printf p, int char_printed);
-int				print_precision(t_printf p, long long nb, int nb_len);
-int				print_width_minus(t_printf p, int char_printed);
+void			*ft_memset(void *destination, int c, size_t len);
 
 
 #endif //PRINTF_FT_PRINTF_H
