@@ -26,4 +26,4 @@ add_executable(printf ft_printf.c ft_printf.h parse.c main.c
 		tools/print_flag.c
 		tools/print_padding.c
 		tools/length.c
-		tools/precision.c )
+		tools/precision.c utilits/ft_strcmp.c)
