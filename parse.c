@@ -19,9 +19,6 @@ static t_printf	filling_p(char *format, int i)
 
 	str = ft_strnew(i);
 	str = ft_strncpy(str, format, i);
-	/*
- 	* заполняем структуру
- 	*/
 	p.min_width = width(str);
 	p.precision = precision(str);
 	p.zero = zero_flag(str, p.minus);
@@ -46,7 +43,7 @@ static char 	*designation_p(char *format, t_printf *p)
 
 	i = 0;
 	/*
-	 * идентифицируем обозначение спецификатора и его длину i
+	 * определяем модификаторы функции
 	 */
 	while (ft_strchr("#0 -+hlLjz.123456789", format[i]) && format[i])
 		i++;
@@ -58,7 +55,9 @@ static int 	dispatch_conversion(va_list *arg, char **str, t_printf p)
 {
 	int	i;
 	int char_printed;
-
+	/*
+	 * преобразование конвертации
+	 */
 	i = 0;
 	char_printed = 0;
 	p.conversion = (*str)[i];
@@ -72,7 +71,6 @@ static int 	dispatch_conversion(va_list *arg, char **str, t_printf p)
 		char_printed = print_simple_char(char_printed, p);
 	*str = &(*str)[i];
 	return (char_printed);
-
 }
 
 int 	parse_percentage(va_list *arg, char **format)
