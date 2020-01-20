@@ -23,7 +23,7 @@ static int 	print_d(va_list *arg, int char_printed, t_printf p)
 		if (p.l == 1 || c == 'D')
 			nb = (long long)va_arg(*arg, long);
 		else if (p.l == 2)
-			nb == va_arg(*arg, long long);
+			nb = va_arg(*arg, long long);
 		else if (p.j == 1)
 			nb = (long long)va_arg(*arg, intmax_t);
 		else if (p.z == 1)
@@ -31,7 +31,7 @@ static int 	print_d(va_list *arg, int char_printed, t_printf p)
 		else if (p.h == 1)
 			nb = (short)va_arg(*arg, int);
 		else if (p.h == 2)
-			nb == (char)va_arg(*arg, int);
+			nb = (char)va_arg(*arg, int);
 		else
 			nb = (long long)va_arg(*arg, int);
 		char_printed += print_d_longlong(char_printed, p, nb);

@@ -86,7 +86,7 @@ char			*ft_strchr(const char *s, int c);
 char 			*ft_strnew(size_t size);
 void			ft_bzero(void *s, size_t size);
 char 			*ft_strncpy(char *dst, const char *src, size_t len);
-size_t			ft_strlen(char *str);
+size_t			ft_strlen(const char *str);
 char			*ft_strndup(const char *src, size_t n);
 int 			ft_atoi(const char *str);
 void			*ft_memset(void *destination, int c, size_t len);
