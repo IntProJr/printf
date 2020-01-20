@@ -77,6 +77,7 @@ int				space_flag(char *str, int plus);
  * char
  */
 int				print_simple_char(int char_printed, t_printf p);
+int				print_sc(va_list *arg, t_printf p);
 
 
 
@@ -95,4 +96,5 @@ int 			ft_atoi(const char *str);
 void			*ft_memset(void *destination, int c, size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_str_multi_chr(char *str, char *c);
+void			ft_putnstr(const char *str, size_t n)
 #endif //PRINTF_FT_PRINTF_H

@@ -28,4 +28,4 @@ add_executable(printf ft_printf.c ft_printf.h parse.c main.c
 		tools/print_padding.c
 		tools/length.c
 		tools/precision.c
-		tools/flag.c utilits/ft_str_multi_chr.c char/print_cs.c)
+		tools/flag.c utilits/ft_str_multi_chr.c char/print_cs.c utilits/ft_putnstr.c utilits/ft_putstr.c)

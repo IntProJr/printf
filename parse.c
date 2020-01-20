@@ -57,14 +57,15 @@ static int 	dispatch_conversion(va_list *arg, char **str, t_printf p)
 	int char_printed;
 	/*
 	 * преобразование конвертации
+	 * спецификаторы преобразований
 	 */
 	i = 0;
 	char_printed = 0;
 	p.conversion = (*str)[i];
 	if(ft_strchr("fFxXuUoOidD", p.conversion))
 		char_printed = print_num(arg, p);
-//	else if (ft_strchr("sc", p.conversion))
-//		char_printed = print_sc(arg, p);
+	else if (ft_strchr("sc", p.conversion))
+		char_printed = print_sc(arg, p);
 //	else if (p.conversion == 'p')
 //		char_printed = print_ptr(char_printed, p);
 	else
