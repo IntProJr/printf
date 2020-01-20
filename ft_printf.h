@@ -41,16 +41,12 @@ typedef struct	s_printf
 
 int 			ft_printf(const char *format, ...);
 int 			parse_percentage(va_list *arg, char **format);
-static char 	*designation_p(char *format, t_printf *p);
-static t_printf	filling_p(char *format, int i);
 
 
 int				width(char *str);
-static int		dispatch_conversion(va_list *arg, char **str, t_printf p);
 int 			print_num(va_list *arg, t_printf p);
 int 			length(char *str, char c);
 int 			print_num(va_list *arg, t_printf p);
-static int 		print_d(va_list *arg, int char_printed, t_printf p);
 int				print_d_longlong(int char_printed, t_printf p, long long nb);
 
 
