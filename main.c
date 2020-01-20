@@ -3,7 +3,12 @@
 
 int main (int argc, char *argv[])
 {
+	char c;
+
+	c = 'a';
+
 	//printf("%d\n", 5);
-	ft_printf("%d  %d  %d", 4, 10, 15);
+	ft_printf("digits : %d\n", 4);
+	ft_printf("character : %c", c);
 }
 

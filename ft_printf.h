@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:42 by lrosalee          #+#    #+#             */
-/*   Updated: 2019/11/25 16:16:47 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/01/20 18:02:00 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ int 			ft_atoi(const char *str);
 void			*ft_memset(void *destination, int c, size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_str_multi_chr(char *str, char *c);
-void			ft_putnstr(const char *str, size_t n)
+void			ft_putnstr(const char *str, size_t n);
+void			ft_putstr(char const *s);
 #endif //PRINTF_FT_PRINTF_H

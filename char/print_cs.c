@@ -1,8 +1,32 @@
-//
-// Created by Int Pro on 26.12.2019.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_cs.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/20 18:42:48 by lrosalee          #+#    #+#             */
+/*   Updated: 2020/01/20 18:42:48 by lrosalee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "../ft_printf.h"
+
+static int	print_str_null(int char_printed, t_printf p)
+{
+	int prec;
+
+	prec = p.precision;
+	char_printed += 6;
+	char_printed += print_width(p, char_printed);
+	char_printed += print_zero_padding(p, char_printed);
+	if (prec > 0)
+		ft_putnstr("(null)", prec);
+	else if (prec != -1)
+		ft_putstr("(null)");
+	return (char_printed);
+}
 
 static int 	print_string(int char_printed, t_printf p, char *str)
 {

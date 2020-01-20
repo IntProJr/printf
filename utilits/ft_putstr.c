@@ -6,8 +6,20 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 18:02:09 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/20 18:02:09 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/01/20 18:02:21 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../ft_printf.h"
 
+void	ft_putstr(char const *s)
+{
+	size_t i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+}
