@@ -6,7 +6,7 @@
 #    By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 18:42:42 by lrosalee          #+#    #+#              #
-#    Updated: 2020/01/20 18:47:39 by lrosalee         ###   ########.fr        #
+#    Updated: 2020/01/20 21:28:06 by lrosalee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,16 +25,16 @@ SRCS = ft_printf.c parse.c ./char/print_cs.c \
 		./utilits/ft_strndup.c ./utilits/ft_strnew.c
 
 
-OBJS = ft_printf.o parse.o ./char/print_cs.o \
-         ./numbers/print_di.o ./numbers/print_number.o \
-         ./tools/flag.o ./tools/length.o ./tools/precision.o \
-         ./tools/print_flag.o ./tools/print_padding.o \
-         ./tools/width.o \
-         ./utilits/ft_atoi.o ./utilits/ft_bzero.o ./utilits/ft_longlong_len.o \
-         ./utilits/ft_memset.o ./utilits/ft_putchar.o ./utilits/ft_putnstr.o \
-         ./utilits/ft_putstr.o ./utilits/ft_str_multi_chr.o ./utilits/ft_strchr.o \
-         ./utilits/ft_strcmp.o ./utilits/ft_strlen.o ./utilits/ft_strncpy.o \
-         ./utilits/ft_strndup.o ./utilits/ft_strnew.o \
+OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
+         ./print_di.o ./print_number.o \
+         ./flag.o length.o ./precision.o \
+         ./print_flag.o ./print_padding.o \
+         ./width.o \
+         ./ft_atoi.o ./ft_bzero.o ./ft_longlong_len.o \
+         ./ft_memset.o ./ft_putchar.o ./ft_putnstr.o \
+         ./ft_putstr.o ./ft_str_multi_chr.o ./ft_strchr.o \
+         ./ft_strcmp.o ./ft_strlen.o ./ft_strncpy.o \
+         ./ft_strndup.o ./ft_strnew.o \
 
 CCFL = -Wall -Wextra -Werror
 
