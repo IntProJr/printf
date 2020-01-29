@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:42 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 17:41:58 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/01/29 19:15:36 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,7 @@ size_t			ft_u_longlong_len(unsigned long long nb);
 int				print_u_l(int char_printed, t_printf p, unsigned long long nb);
 void			ft_putnchar(char c, size_t n);
 void			ft_put_u_longlong_base(unsigned long long nb, char base);
-
-
+size_t			ft_u_len_base(unsigned long long int nb, char base);
 
 
 #endif //PRINTF_FT_PRINTF_H

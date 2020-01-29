@@ -6,7 +6,7 @@
 #    By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 18:42:42 by lrosalee          #+#    #+#              #
-#    Updated: 2020/01/29 17:41:58 by lrosalee         ###   ########.fr        #
+#    Updated: 2020/01/29 19:43:15 by lrosalee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = ft_printf.c parse.c ./char/print_cs.c \
 		./utilits/ft_strcmp.c ./utilits/ft_strlen.c ./utilits/ft_strncpy.c \
 		./utilits/ft_strndup.c ./utilits/ft_strnew.c ./numbers/print_u.c \
 		./utilits/ft_u_longlong_len.c ./utilits/ft_u_longlong_base.c \
-		./utilits/ft_putnchar.c
+		./utilits/ft_putnchar.c ./numbers/print_o.c ./utilits/ft_u_len_base.c
 
 OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
          ./print_di.o ./print_number.o \
@@ -35,8 +35,9 @@ OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
          ./ft_putstr.o ./ft_str_multi_chr.o ./ft_strchr.o \
          ./ft_strcmp.o ./ft_strlen.o ./ft_strncpy.o \
          ./ft_strndup.o ./ft_strnew.o ./print_u.o \
-         ./ft_u_longlong_len.o ./ft_u_longlong_base.c \
-         ./ft_putnchar.o
+         ./ft_u_longlong_len.o ./ft_u_longlong_base.o \
+         ./ft_putnchar.o ./print_o.o ./ft_u_len_base.o \
+
 
 
 CCFL = -Wall -Wextra -Werror

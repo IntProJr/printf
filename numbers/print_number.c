@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:40:25 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 17:15:26 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/01/29 19:21:29 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,18 @@ static int 	print_d(va_list *arg, int char_printed, t_printf p)
 	return (char_printed);
 }
 
-static int print_o(va_list *arg, int char_printed, t_printf p)
+static int 	print_o(va_list *arg, int char_printed, t_printf p)
 {
 	long long	nb;
-	if (p.l || p.h || p.j || p.z || p.conversion == '0')
+	if (p.conversion || p.h ||p.z || p.j || p.l == 'O')
+		char_printed += print_o_unsigned(arg, char_printed, p);
+	else
+	{
+		nb = (long long)va_arg(*arg, unsigned int);
+		char_printed += print_o_longlong(char_printed, p, nb);
+	}
+	return (char_printed);
+
 }
 
 static int print_u(va_list *arg, int char_printed, t_printf p)
@@ -82,7 +90,5 @@ int 	print_num(va_list *arg, t_printf p)
 		char_printed += print_u(arg, char_printed, p);
 	else if (c == 'o' || c == 'O')
 		char_printed += print_o(arg, char_printed, p);
-
-
 	return (0);
 }

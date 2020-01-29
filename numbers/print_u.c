@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 17:27:38 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 17:41:58 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/01/29 19:12:44 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,4 @@ int print_u_l(int char_printed, t_printf p, unsigned long long nb)
 		ft_put_u_longlong_base(nb, 10);
 	char_printed += print_width_minus(p, char_printed);
 	return (char_printed);
-
-
-
-
 }
