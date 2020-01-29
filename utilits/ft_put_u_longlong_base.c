@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_longlong_len.c                                  :+:      :+:    :+:   */
+/*   ft_put_u_longlong_base.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 17:34:10 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 17:34:10 by lrosalee         ###   ########.fr       */
+/*   Created: 2020/01/29 17:46:06 by lrosalee          #+#    #+#             */
+/*   Updated: 2020/01/29 17:49:41 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-size_t		ft_longlong_len(long long nbr)
+void	ft_put_u_longlong_base(unsigned long long nb, char base)
 {
-	size_t	len;
-
-	len = 1;
-	if (nbr < 0)
-		len += 1;
-	while (nbr > 9 || nbr < - 9)
+	if (base > 1 && base <= 10)
 	{
-		nbr /= 10;
-		len++;
+		if (nb < (unsigned long long)base)
+			ft_putchar('0' + nb);
+		else
+		{
+			ft_put_u_longlong_base(nb / base, base);
+			ft_putchar('0' + nb % base);
+		}
 	}
-	return (len);
+	else if (base == 1)
+		ft_putnchar('1', nb);
 }

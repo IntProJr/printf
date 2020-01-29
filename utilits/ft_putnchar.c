@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_longlong_len.c                                  :+:      :+:    :+:   */
+/*   ft_putnchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 17:34:10 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 17:34:10 by lrosalee         ###   ########.fr       */
+/*   Created: 2020/01/29 17:54:19 by lrosalee          #+#    #+#             */
+/*   Updated: 2020/01/29 17:54:19 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-size_t		ft_longlong_len(long long nbr)
+void	ft_putnchar(char c, size_t n)
 {
-	size_t	len;
+	size_t		i;
 
-	len = 1;
-	if (nbr < 0)
-		len += 1;
-	while (nbr > 9 || nbr < - 9)
+	i = 0;
+	while (i < n)
 	{
-		nbr /= 10;
-		len++;
+		write(1, &c, 1);
+		i++;
 	}
-	return (len);
 }

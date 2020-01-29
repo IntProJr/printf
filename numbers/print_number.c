@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:40:25 by lrosalee          #+#    #+#             */
-/*   Updated: 2019/11/25 16:40:27 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/01/29 17:15:26 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,29 @@ static int 	print_d(va_list *arg, int char_printed, t_printf p)
 	return (char_printed);
 }
 
-
+static int print_u(va_list *arg, int char_printed, t_printf p)
+{
+	char 				c;
+	unsigned long long	nb;
+	c = p.conversion;
+	if (c == 'u' || c == 'U')
+	{
+		if (p.l == 1 || c == 'U')
+			nb = (unsigned long long)va_arg(*arg, unsigned long);
+		else if (p.l == 2)
+			nb = va_arg(*arg, unsigned long long);
+		else if (p.h == 1)
+			nb = (unsigned short)va_arg(*arg, unsigned int);
+		else if (p.h == 2)
+			nb = (unsigned char)va_arg(*arg, unsigned int);
+		else if (p.j == 1)
+			nb = (unsigned long long)va_arg(*arg, uintmax_t);
+		else if (p.z == 1)
+			nb = (unsigned long long)va_arg(*arg, unsigned int);
+		char_printed += print_u_l(char_printed, p, nb);
+	}
+	return (char_printed);
+}
 
 int 	print_num(va_list *arg, t_printf p)
 {
@@ -50,5 +72,7 @@ int 	print_num(va_list *arg, t_printf p)
 	c = p.conversion;
 	if (c == 'd' || c == 'i' || c == 'D')
 		char_printed += print_d(arg, char_printed, p);
+	else if (c == 'u' || c == 'U')
+		char_printed += print_u(arg, char_printed, p);
 	return (0);
 }

@@ -6,10 +6,9 @@
 #    By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 18:42:42 by lrosalee          #+#    #+#              #
-#    Updated: 2020/01/20 21:28:06 by lrosalee         ###   ########.fr        #
+#    Updated: 2020/01/29 17:41:58 by lrosalee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 NAME = libftprintf.a
 
@@ -22,8 +21,9 @@ SRCS = ft_printf.c parse.c ./char/print_cs.c \
 		./utilits/ft_memset.c ./utilits/ft_putchar.c ./utilits/ft_putnstr.c \
 		./utilits/ft_putstr.c ./utilits/ft_str_multi_chr.c ./utilits/ft_strchr.c \
 		./utilits/ft_strcmp.c ./utilits/ft_strlen.c ./utilits/ft_strncpy.c \
-		./utilits/ft_strndup.c ./utilits/ft_strnew.c
-
+		./utilits/ft_strndup.c ./utilits/ft_strnew.c ./numbers/print_u.c \
+		./utilits/ft_u_longlong_len.c ./utilits/ft_u_longlong_base.c \
+		./utilits/ft_putnchar.c
 
 OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
          ./print_di.o ./print_number.o \
@@ -34,7 +34,10 @@ OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
          ./ft_memset.o ./ft_putchar.o ./ft_putnstr.o \
          ./ft_putstr.o ./ft_str_multi_chr.o ./ft_strchr.o \
          ./ft_strcmp.o ./ft_strlen.o ./ft_strncpy.o \
-         ./ft_strndup.o ./ft_strnew.o \
+         ./ft_strndup.o ./ft_strnew.o ./print_u.o \
+         ./ft_u_longlong_len.o ./ft_u_longlong_base.c \
+         ./ft_putnchar.o
+
 
 CCFL = -Wall -Wextra -Werror
 
