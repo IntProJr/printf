@@ -1,8 +1,36 @@
-//
-// Created by Int Pro on 09.12.2019.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_flag.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/29 20:00:49 by lrosalee          #+#    #+#             */
+/*   Updated: 2020/01/29 20:29:11 by lrosalee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+int print_hash(t_printf p, long long nb)
+{
+	int		i;
+	char	c;
+
+	c = p.conversion;
+	i = ft_u_len_base(nb, 8);
+
+	if (p.hash && ft_strchr("oO", c) && nb != 0 && i >= p.precision)
+		return (write(1, "0", 1));
+	if (p.hash && ft_strchr("oO", c) && p.precision == -1 && nb == 0)
+		return (write(1, "0", 1));
+	else if (p.hash && c == 'x' && nb != 0)
+		return (write(1, "0x", 2));
+	else if (p.hash && c == 'X' && nb != 0)
+		return (write(1, "0X", 2));
+	return (0);
+
+}
 
 int		print_space(t_printf p, long long nb)
 {
