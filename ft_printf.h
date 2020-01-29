@@ -97,6 +97,8 @@ void			ft_putstr(char const *s);
 size_t			ft_u_longlong_len(unsigned long long nb);
 int				print_u_l(int char_printed, t_printf p, unsigned long long nb);
 void			ft_putnchar(char c, size_t n);
+void			ft_put_u_longlong_base(unsigned long long nb, char base);
+
 
 
 

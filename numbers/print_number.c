@@ -39,6 +39,12 @@ static int 	print_d(va_list *arg, int char_printed, t_printf p)
 	return (char_printed);
 }
 
+static int print_o(va_list *arg, int char_printed, t_printf p)
+{
+	long long	nb;
+	if (p.l || p.h || p.j || p.z || p.conversion == '0')
+}
+
 static int print_u(va_list *arg, int char_printed, t_printf p)
 {
 	char 				c;
@@ -74,5 +80,9 @@ int 	print_num(va_list *arg, t_printf p)
 		char_printed += print_d(arg, char_printed, p);
 	else if (c == 'u' || c == 'U')
 		char_printed += print_u(arg, char_printed, p);
+	else if (c == 'o' || c == 'O')
+		char_printed += print_o(arg, char_printed, p);
+
+
 	return (0);
 }
