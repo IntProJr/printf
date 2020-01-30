@@ -22,4 +22,5 @@ size_t		ft_u_longlong_len(unsigned long long nb)
 		nb /= 10;
 		len++;
 	}
+	return	(len);
 }

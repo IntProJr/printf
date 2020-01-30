@@ -57,6 +57,7 @@ static int print_u(va_list *arg, int char_printed, t_printf p)
 {
 	char 				c;
 	unsigned long long	nb;
+
 	c = p.conversion;
 	if (c == 'u' || c == 'U')
 	{
@@ -71,6 +72,8 @@ static int print_u(va_list *arg, int char_printed, t_printf p)
 		else if (p.j == 1)
 			nb = (unsigned long long)va_arg(*arg, uintmax_t);
 		else if (p.z == 1)
+			nb = (unsigned long long)va_arg(*arg, size_t);
+		else
 			nb = (unsigned long long)va_arg(*arg, unsigned int);
 		char_printed += print_u_l(char_printed, p, nb);
 	}

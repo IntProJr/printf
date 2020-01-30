@@ -22,13 +22,13 @@
 
 typedef struct	s_printf
 {
-	char		conversion;	// преобразование
+	char		conversion;	// спецификатор преобразование
 	int			precision; // точность
 	int			min_width;
 	int 		zero;
 	int			plus;
 	int			minus;
-	int			hash;	// ???????????????
+	int			hash;	// #
 	int			space;
 	int			l;		//long int, unsigned long int
 	int			bl;		//long long int, unsigned long long int
@@ -64,7 +64,7 @@ int				print_width_minus(t_printf p, int char_printed);
  */
 
 int				print_o_unsigned(va_list *arg, int char_printed, t_printf p);
-static int		print_u_o_long(int char_printed, t_printf p, unsigned long long nb);
+//static int		print_u_o_long(int char_printed, t_printf p, unsigned long long nb);
 int				print_o_longlong(int char_printed, t_printf p, long long nb);
 
 

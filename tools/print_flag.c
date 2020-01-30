@@ -29,7 +29,6 @@ int print_hash(t_printf p, long long nb)
 	else if (p.hash && c == 'X' && nb != 0)
 		return (write(1, "0X", 2));
 	return (0);
-
 }
 
 int		print_space(t_printf p, long long nb)

@@ -30,7 +30,12 @@ static int 	print_u_o_long(int char_printed, t_printf p, unsigned long long nb)
 	if (p.hash == 1 && ((nb_len >= p.precision &&nb != 0)
 		|| (p.precision == -1 && nb == 0)))
 		print_hash(p, nb);
-
+	char_printed += print_precision(p, nb, nb_len);
+	char_printed += print_zero_padding(p, char_printed);
+	if (!(p.precision == -1 && nb == 0))
+		ft_put_u_longlong_base(nb, 8);
+	char_printed += print_width_minus(p, char_printed);
+	return (char_printed);
 }
 
 int 	print_o_unsigned(va_list *arg, int char_printed, t_printf p)
@@ -65,7 +70,7 @@ int 	print_o_longlong(int char_printed, t_printf p, long long nb)
 		char_printed += nb_len;
 	if (p.precision > 0)
 		prec = p.precision - (nb < 0 ? nb_len - 1 : nb_len);
-	if (p.hash && nb != 0 && nb_len >= precision)
+	if (p.hash && nb != 0 && nb_len >= p.precision)
 	{
 		if (p.zero == 0)
 			p.precision -= 1;
