@@ -64,10 +64,10 @@ int				print_width_minus(t_printf p, int char_printed);
  */
 
 int				print_o_unsigned(va_list *arg, int char_printed, t_printf p);
-//static int		print_u_o_long(int char_printed, t_printf p, unsigned long long nb);
+static int		print_u_o_long(int char_printed, t_printf p, unsigned long long nb);
 int				print_o_longlong(int char_printed, t_printf p, long long nb);
-
-
+static int		print_x(va_list *arg, int char_printed, t_printf p);
+int				print_x_l(int char_printed, t_printf p, unsigned long long nb);
 
 
 /*
@@ -81,6 +81,7 @@ int				minus_flag(char *str);
 int				hash_flag(char *str);
 int				space_flag(char *str, int plus);
 int				print_hash(t_printf p, long long nb);
+int				hash_length(t_printf p, long long nb);
 
 /*
  * char
@@ -112,6 +113,8 @@ int				print_u_l(int char_printed, t_printf p, unsigned long long nb);
 void			ft_putnchar(char c, size_t n);
 void			ft_put_u_longlong_base(unsigned long long nb, char base);
 size_t			ft_u_len_base(unsigned long long int nb, char base);
+int				ft_hex_len(unsigned long long nb);
+void			ft_print_u_hex(unsigned long long nb, const char *str);
 
 
 #endif //PRINTF_FT_PRINTF_H

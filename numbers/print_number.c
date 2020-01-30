@@ -80,6 +80,27 @@ static int print_u(va_list *arg, int char_printed, t_printf p)
 	return (char_printed);
 }
 
+static int	print_x(va_list *arg, int char_printed, t_printf p)
+{
+	unsigned long long	nb;
+
+	if (p.l == 1)
+		nb = (unsigned long long)va_arg(*arg, unsigned long);
+	else if (p.l == 2)
+		nb = va_arg(*arg, unsigned long long);
+	else if (p.h == 1)
+		nb = (unsigned short)va_arg(*arg, unsigned int);
+	else if (p.h == 2)
+		nb = (unsigned char)va_arg(*arg, unsigned int);
+	else if (p.j == 1)
+		nb = (unsigned long long)va_arg(*arg, uintmax_t);
+	else if (p.z == 1)
+		nb = (unsigned long long)va_arg(*arg, size_t);
+	else
+		nb = (unsigned long long)va_arg(*arg, unsigned int);
+	char_printed += print_x_l(char_printed, p, nb);
+	return (char_printed);
+}
 int 	print_num(va_list *arg, t_printf p)
 {
 	int 	char_printed;
@@ -93,5 +114,9 @@ int 	print_num(va_list *arg, t_printf p)
 		char_printed += print_u(arg, char_printed, p);
 	else if (c == 'o' || c == 'O')
 		char_printed += print_o(arg, char_printed, p);
-	return (0);
+	else if (c == 'x' || c == 'X')
+		char_printed += print_x(arg, char_printed, p);
+
+
+	return (char_printed);
 }

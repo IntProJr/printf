@@ -9,6 +9,7 @@ int main (int argc, char *argv[])
 
 	//printf("%d\n", 5);
 	ft_printf("digits : %d\n", 4);
-	ft_printf("character : %c\n %s", c, "ferr");
+	ft_printf("character : %c\n %s\n", c, "ferr");
+	ft_printf("%x", 1232);
 }
 

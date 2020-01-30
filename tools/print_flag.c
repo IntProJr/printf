@@ -31,6 +31,17 @@ int print_hash(t_printf p, long long nb)
 	return (0);
 }
 
+int		hash_length(t_printf p, long long nb)
+{
+	if (p.hash && ft_strchr("oO", p.conversion) && nb != 0)
+		return (1);
+	else if (p.hash && p.conversion == 'x' && nb != 0)
+		return (2);
+	else if (p.hash && p.conversion == 'X' && nb != 0)
+		return (2);
+	return (0);
+}
+
 int		print_space(t_printf p, long long nb)
 {
 	if (p.space && ft_strchr("diD", p.conversion))
