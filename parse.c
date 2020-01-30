@@ -56,7 +56,6 @@ static int 	dispatch_conversion(va_list *arg, char **str, t_printf p)
 	int	i;
 	int char_printed;
 	/*
-	 * преобразование конвертации
 	 * спецификаторы преобразований
 	 */
 	i = 0;
