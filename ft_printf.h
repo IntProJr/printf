@@ -88,8 +88,8 @@ int				hash_length(t_printf p, long long nb);
  */
 int				print_simple_char(int char_printed, t_printf p);
 int				print_sc(va_list *arg, t_printf p);
-
-
+int				print_ptr(int char_printed, va_list *arg ,t_printf p);
+static void		ft_print_ptr(size_t nb);
 
 /*
  * utilits
@@ -115,6 +115,6 @@ void			ft_put_u_longlong_base(unsigned long long nb, char base);
 size_t			ft_u_len_base(unsigned long long int nb, char base);
 int				ft_hex_len(unsigned long long nb);
 void			ft_print_u_hex(unsigned long long nb, const char *str);
-
+size_t			ft_ptr_len_base(size_t ptr, unsigned int base);
 
 #endif //PRINTF_FT_PRINTF_H

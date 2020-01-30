@@ -66,8 +66,8 @@ static int 	dispatch_conversion(va_list *arg, char **str, t_printf p)
 		char_printed = print_num(arg, p);
 	else if (ft_strchr("sc", p.conversion))
 		char_printed = print_sc(arg, p);
-//	else if (p.conversion == 'p')
-//		char_printed = print_ptr(char_printed, p);
+	else if (p.conversion == 'p')
+		char_printed = print_ptr(char_printed, arg, p);
 	else
 		char_printed = print_simple_char(char_printed, p);
 	*str = &(*str)[i];

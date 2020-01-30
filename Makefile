@@ -13,8 +13,9 @@
 NAME = libftprintf.a
 
 SRCS = ft_printf.c parse.c ./char/print_cs.c \
+        ./char/print_ptr.c \
 		./numbers/print_di.c ./numbers/print_number.c \
-		./numbers/print_x.c
+		./numbers/print_x.c \
 		./tools/flag.c ./tools/length.c ./tools/precision.c \
 		./tools/print_flag.c ./tools/print_padding.c \
 		./tools/width.c \
@@ -26,7 +27,7 @@ SRCS = ft_printf.c parse.c ./char/print_cs.c \
 		./utilits/ft_u_longlong_len.c \
 		./utilits/ft_putnchar.c ./numbers/print_o.c ./utilits/ft_u_len_base.c \
 		./utilits/ft_put_u_longlong_base.c ./utilits/ft_hex_len.c \
-        ./utilits/ft_print_u_hex.c
+        ./utilits/ft_print_u_hex.c ./utilits/ft_ptr_len_base.c \
 
 
 OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
@@ -42,7 +43,8 @@ OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
          ./ft_u_longlong_len.o  \
          ./ft_putnchar.o ./print_o.o ./ft_u_len_base.o \
          ./ft_put_u_longlong_base.o ./ft_hex_len.o \
-         ./print_x.o ./ft_print_u_hex.o
+         ./print_x.o ./ft_print_u_hex.o ./print_ptr.o \
+         ./ft_ptr_len_base.o
 
 
 
