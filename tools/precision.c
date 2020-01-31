@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 18:18:33 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/31 18:18:33 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/01/31 20:18:11 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 int	precision(char *str)
 {
 	int		i;
-	char	tmp[ft_strlen(str)];
+	int		num_tmp;
 	int		j;
+	num_tmp = ft_strlen(str);
+
+	char	tmp[num_tmp];
 
 	i = 0;
 	j = 0;

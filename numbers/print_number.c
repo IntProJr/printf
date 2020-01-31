@@ -117,6 +117,5 @@ int 	print_num(va_list *arg, t_printf p)
 	else if (c == 'x' || c == 'X')
 		char_printed += print_x(arg, char_printed, p);
 
-
 	return (char_printed);
 }
