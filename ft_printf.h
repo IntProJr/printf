@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:42 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 20:42:23 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/01/31 18:43:59 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ int				print_width_minus(t_printf p, int char_printed);
  */
 
 int				print_o_unsigned(va_list *arg, int char_printed, t_printf p);
-static int		print_u_o_long(int char_printed, t_printf p, unsigned long long nb);
+//static int		print_u_o_long(int char_printed, t_printf p, unsigned long long nb);
 int				print_o_longlong(int char_printed, t_printf p, long long nb);
-static int		print_x(va_list *arg, int char_printed, t_printf p);
+//static int		print_x(va_list *arg, int char_printed, t_printf p);
 int				print_x_l(int char_printed, t_printf p, unsigned long long nb);
 
 
@@ -89,7 +89,7 @@ int				hash_length(t_printf p, long long nb);
 int				print_simple_char(int char_printed, t_printf p);
 int				print_sc(va_list *arg, t_printf p);
 int				print_ptr(int char_printed, va_list *arg ,t_printf p);
-static void		ft_print_ptr(size_t nb);
+//static void		ft_print_ptr(size_t nb);
 
 /*
  * utilits

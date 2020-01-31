@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 18:20:09 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/31 18:20:09 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/01/31 18:51:17 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -14,13 +14,7 @@
 
 int main (int argc, char *argv[])
 {
-	char c;
-
-	c = 'a';
-
-	//printf("%d\n", 5);
-	ft_printf("digits : %d\n", 4);
-	ft_printf("character : %c\n %s\n", c, "ferr");
-	ft_printf("%x", 1232);
+	ft_printf("%7d\n", 33);
+	printf("%7d", 33);
 }
 
