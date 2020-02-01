@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:18:06 by lrosalee          #+#    #+#             */
-/*   Updated: 2019/11/25 16:18:10 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/01 16:25:18 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	width(char *str)
 	while (str[i] != '\0')
 	{
 		before = ft_strndup(str, i);
-		if (ft_strchr("0123456789", str[i]) && !ft_strchr(before, '.'))
+		if (ft_strchr("0123456789", str[i]) && (!ft_strchr(before, '.')))
 		{
 			tmp[j] = str[i];
 			j++;

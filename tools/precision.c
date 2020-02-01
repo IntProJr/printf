@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 18:18:33 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/31 20:18:11 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/01/31 20:18:43 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	precision(char *str)
 	num_tmp = ft_strlen(str);
 
 	char	tmp[num_tmp];
-
 	i = 0;
 	j = 0;
 	ft_memset(tmp, '\0', ft_strlen(str));
