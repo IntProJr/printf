@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:55 by lrosalee          #+#    #+#             */
-/*   Updated: 2019/11/25 16:17:33 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/01 18:24:17 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static t_printf	filling_p(char *format, int i)
 	str = ft_strncpy(str, format, i);
 	p.min_width = width(str);
 	p.precision = precision(str);
-	p.zero = zero_flag(str, p.minus);
 	p.plus = plus_flag(str);
 	p.minus = minus_flag(str);
+	p.zero = zero_flag(str, p.minus);
 	p.hash = hash_flag(str);
 	p.space = space_flag(str, p.plus);
 	p.bl = length(str, 'L');

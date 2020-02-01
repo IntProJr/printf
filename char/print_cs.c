@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 18:42:48 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/20 18:42:48 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/01 19:46:25 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,14 @@ static int 	print_string(int char_printed, t_printf p, char *str)
 	int	prec;
 
 	prec = p.precision;
+	if (prec == 0 && p.min_width == 0)
+		return (0);
 	if (str || prec != 0)
 	{
 		if (!str)
 			if ((str = (char *)malloc(sizeof(char) * 7)))
 				str = "(null)";
+
 		if (prec == 0 && ft_strlen(str) > 0)
 			char_printed += (int)ft_strlen(str);
 		else if (str && prec > 0 && prec < (int)ft_strlen(str))

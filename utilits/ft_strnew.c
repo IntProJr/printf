@@ -11,15 +11,22 @@
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
 char 	*ft_strnew(size_t size)
 {
-	char	*s;
+	char	*str;
+	char	*p;
 
 	if (size + 1 == 0)
 		return (NULL);
-	s = (char *)malloc(sizeof(char) * size + 1);
-	if (s == NULL)
+	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
 		return (NULL);
-	ft_bzero(s, size + 1);
-	return (s);
+	p = str;
+	while (size)
+	{
+		*p++ = '\0';
+		size--;
+	}
+	*p = '\0';
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 18:20:09 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/31 18:51:17 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/01 19:28:23 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -14,7 +14,10 @@
 
 int main (int argc, char *argv[])
 {
-	ft_printf("%7d\n", 33);
-	printf("%7d", 33);
+	char *s_hidden = "hi low\n\0don't print me lol\0";
+
+
+	ft_printf("%s%s", "hello", "world");
+	printf("%s%s", "hello", "world");
 }
 

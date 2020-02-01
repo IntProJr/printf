@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 18:18:33 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/31 20:18:43 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/01 17:23:41 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	precision(char *str)
 	int		i;
 	int		num_tmp;
 	int		j;
+
 	num_tmp = ft_strlen(str);
 
 	char	tmp[num_tmp];
@@ -30,7 +31,7 @@ int	precision(char *str)
 			ft_memset(tmp, '\0', ft_strlen(str));
 			j = 0;
 			i++;
-			while (ft_strchr("0123456789", str[i] && str[i] != '\0'))
+			while (ft_strchr("0123456789", str[i]) && str[i] != '\0')
 				tmp[j++] = str[i++];
 		}
 		else
