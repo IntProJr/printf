@@ -23,7 +23,7 @@ int 	ft_atoi(const char *str)
 	sign = 1;
 	if (str[i] == '-')
 		sign = -1;
-	if (str[i] == '+' || str[i])
+	if (str[i] == '+' || str[i] == '-')
 		i++;
 	was_sign = sign;
 	num = 0;
@@ -34,6 +34,7 @@ int 	ft_atoi(const char *str)
 				return (-1);
 		else if (num < 0 && was_sign == -1)
 			return (0);
+		i++;
 	}
 	return ((int)num * sign);
 }

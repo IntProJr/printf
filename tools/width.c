@@ -27,7 +27,7 @@ int	width(char *str)
 	while (str[i] != '\0')
 	{
 		before = ft_strndup(str, i);
-		if (ft_strchr("0123456789", str[i] && !ft_strchr(before, '.')))
+		if (ft_strchr("0123456789", str[i]) && !ft_strchr(before, '.'))
 		{
 			tmp[j] = str[i];
 			j++;
