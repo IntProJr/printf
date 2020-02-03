@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 18:42:48 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/01 19:46:25 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 16:43:46 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int 	print_string(int char_printed, t_printf p, char *str)
 	int	prec;
 
 	prec = p.precision;
-	if (prec == 0 && p.min_width == 0)
+	if (prec == 0 && p.width_option == 0)
 		return (0);
 	if (str || prec != 0)
 	{
@@ -67,7 +67,7 @@ int 	print_simple_char(int char_printed, t_printf p)
 	char_printed += 1;
 	char_printed += print_width(p, char_printed);
 	char_printed += print_zero_padding(p, char_printed);
-	ft_putchar(p.conversion);
+	ft_putchar(p.conversion_percent);
 	char_printed += print_width_minus(p, char_printed);
 	return (char_printed);
 }
@@ -89,12 +89,12 @@ int 	print_sc(va_list *arg, t_printf p)
 	char 	*str;
 
 	char_printed = 0;
-	if (p.conversion == 'c')
+	if (p.conversion_percent == 'c')
 	{
 		c = (char)va_arg(*arg, int);
 		char_printed += print_char(char_printed, p, c);
 	}
-	else if (p.conversion == 's')
+	else if (p.conversion_percent == 's')
 	{
 		str = (char *)va_arg(*arg, char *);
 		char_printed += print_string(char_printed, p ,str);

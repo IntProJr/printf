@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:42 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/31 18:43:59 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 16:45:13 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
 
 typedef struct	s_printf
 {
-	char		conversion;	// спецификатор преобразование
+	char		conversion_percent;	// спецификатор преобразование
 	int			precision; // точность
-	int			min_width;
+	int			width_option;
 	int 		zero;
-	int			plus;
-	int			minus;
+	int			znak_plus;
+	int			znak_minus;
 	int			hash;	// #
 	int			space;
 	int			l;		//long int, unsigned long int

@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 20:00:49 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 20:29:11 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 16:45:13 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int print_hash(t_printf p, long long nb)
 	int		i;
 	char	c;
 
-	c = p.conversion;
+	c = p.conversion_percent;
 	i = ft_u_len_base(nb, 8);
 
 	if (p.hash && ft_strchr("oO", c) && nb != 0 && i >= p.precision)
@@ -33,18 +33,18 @@ int print_hash(t_printf p, long long nb)
 
 int		hash_length(t_printf p, long long nb)
 {
-	if (p.hash && ft_strchr("oO", p.conversion) && nb != 0)
+	if (p.hash && ft_strchr("oO", p.conversion_percent) && nb != 0)
 		return (1);
-	else if (p.hash && p.conversion == 'x' && nb != 0)
+	else if (p.hash && p.conversion_percent == 'x' && nb != 0)
 		return (2);
-	else if (p.hash && p.conversion == 'X' && nb != 0)
+	else if (p.hash && p.conversion_percent == 'X' && nb != 0)
 		return (2);
 	return (0);
 }
 
 int		print_space(t_printf p, long long nb)
 {
-	if (p.space && ft_strchr("diD", p.conversion))
+	if (p.space && ft_strchr("diD", p.conversion_percent))
 	{
 		if (nb >= 0)
 		{
@@ -57,7 +57,7 @@ int		print_space(t_printf p, long long nb)
 
 int print_plus(t_printf p, long long nb)
 {
-	if (p.plus && nb >= 0 && !ft_strchr("uU", p.conversion))
+	if (p.znak_plus && nb >= 0 && !ft_strchr("uU", p.conversion_percent))
 	{
 		ft_putchar('+');
 		return (1);

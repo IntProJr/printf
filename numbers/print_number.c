@@ -17,7 +17,7 @@ static int 	print_d(va_list *arg, int char_printed, t_printf p)
 	long long	nb;
 	char		c;
 
-	c = p.conversion;
+	c = p.conversion_percent;
 	if (c == 'd' || c == 'i' || c =='D')
 	{
 		if (p.l == 1 || c == 'D')
@@ -42,7 +42,7 @@ static int 	print_d(va_list *arg, int char_printed, t_printf p)
 static int 	print_o(va_list *arg, int char_printed, t_printf p)
 {
 	long long	nb;
-	if (p.conversion || p.h ||p.z || p.j || p.l == 'O')
+	if (p.conversion_percent || p.h || p.z || p.j || p.l == 'O')
 		char_printed += print_o_unsigned(arg, char_printed, p);
 	else
 	{
@@ -58,7 +58,7 @@ static int print_u(va_list *arg, int char_printed, t_printf p)
 	char 				c;
 	unsigned long long	nb;
 
-	c = p.conversion;
+	c = p.conversion_percent;
 	if (c == 'u' || c == 'U')
 	{
 		if (p.l == 1 || c == 'U')
@@ -107,7 +107,7 @@ int 	print_num(va_list *arg, t_printf p)
 	char	c;
 
 	char_printed = 0;
-	c = p.conversion;
+	c = p.conversion_percent;
 	if (c == 'd' || c == 'i' || c == 'D')
 		char_printed += print_d(arg, char_printed, p);
 	else if (c == 'u' || c == 'U')

@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 18:17:52 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/31 18:17:54 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 16:45:13 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ int	print_width(t_printf p, int written)
 	int	i;
 
 	spaces_printed = 0;
-	i = p.min_width - written;
-	if (p.min_width > 0 && p.min_width > written && !p.minus)
+	i = p.width_option - written;
+	if (p.width_option > 0 && p.width_option > written && !p.znak_minus)
 	{
 		while (i-- > 0)
 		{
-			if (ft_strchr("cDOUCSsp", p.conversion)
-				&& (p.zero && (p.minus || p.precision)))
+			if (ft_strchr("cDOUCSsp", p.conversion_percent)
+				&& (p.zero && (p.znak_minus || p.precision)))
 			{
 				ft_putchar('0');
 				spaces_printed++;
 			}
-			else if (!p.zero || (ft_strchr("diuoxX", p.conversion)
+			else if (!p.zero || (ft_strchr("diuoxX", p.conversion_percent)
 			&& p.precision && p.zero))
 			{
 				ft_putchar(' ');
@@ -47,9 +47,9 @@ int print_zero_padding(t_printf p, int char_printed)
 
 	zero_printed = 0;
 	i = 0;
-	if (p.zero == 1 && (p.min_width > char_printed))
+	if (p.zero == 1 && (p.width_option > char_printed))
 	{
-		i = p.min_width - char_printed;
+		i = p.width_option - char_printed;
 		while (i > 0)
 		{
 			ft_putchar('0');
@@ -67,9 +67,9 @@ int	print_width_minus(t_printf p, int char_printed)
 	int	width;
 
 	spaces_printed = 0;
-	width = p.min_width;
+	width = p.width_option;
 	i = 0;
-	if (width > 0 && width > char_printed && !p.zero && p.minus)
+	if (width > 0 && width > char_printed && !p.zero && p.znak_minus)
 	{
 		i = width - char_printed;
 		while (i > 0)

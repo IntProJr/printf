@@ -43,7 +43,7 @@ int 	print_o_unsigned(va_list *arg, int char_printed, t_printf p)
 	unsigned long long	u_nb;
 
 	u_nb = 0;
-	if (p.l == 1 || p.conversion == 'o')
+	if (p.l == 1 || p.conversion_percent == 'o')
 		u_nb = (unsigned long long)va_arg(*arg, unsigned long);
 	else if (p.l == 2)
 		u_nb = va_arg(*arg, unsigned long long);

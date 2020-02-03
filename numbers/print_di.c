@@ -28,7 +28,7 @@ int 	print_d_longlong(int char_printed, t_printf p, long long nb)
 	int nb_len;
 
 	nb_len = ft_longlong_len(nb);
-	if (p.plus && nb >= 0)
+	if (p.znak_plus && nb >= 0)
 		char_printed += 1;
 	char_printed += print_space(p, nb);
 	if (!(p.precision == -1 && nb == 0))
