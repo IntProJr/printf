@@ -12,16 +12,16 @@
 
 #include "../ft_printf.h"
 
-int print_u_l(int char_printed, t_printf p, unsigned long long nb)
+int	print_u_l(int char_printed, t_printf p, unsigned long long nb)
 {
-	int prec;
-	int len;
+	int	prec;
+	int	len;
 
 	prec = p.precision;
 	len = ft_u_longlong_len(nb);
 	char_printed += print_plus(p, nb);
 	char_printed += print_space(p, nb);
-	if (!(prec == -1) && nb == 0)
+	if (!(prec == -1 && nb == 0))
 		char_printed += len;
 	if (prec > 0 && prec > len)
 		char_printed += prec - len;

@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:40:25 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 20:54:58 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 21:00:02 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ static int 	print_o(va_list *arg, int char_printed, t_printf p)
 
 }
 
-static int print_u(va_list *arg, int char_printed, t_printf p)
+static int	print_u(va_list *arg, int char_printed, t_printf p)
 {
-	char 				c;
+	char				c;
 	unsigned long long	nb;
 
 	c = p.conversion_percent;
