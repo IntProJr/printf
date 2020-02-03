@@ -6,25 +6,25 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 18:42:48 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 18:28:49 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 19:38:32 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int	printing_string_null(int char_printed, t_printf p)
+static int	printing_string_null(int printed_char, t_printf p)
 {
 	int prec;
 
 	prec = p.precision;
-	char_printed += 6;
-	char_printed += printing_width(p, char_printed);
-	char_printed += printing_padding_of_zero(p, char_printed);
+	printed_char += 6;
+	printed_char += printing_width(p, printed_char);
+	printed_char += printing_padding_of_zero(p, printed_char);
 	if (prec > 0)
 		ft_putnstr("(null)", prec);
 	else if (prec != -1)
 		ft_putstr("(null)");
-	return (char_printed);
+	return (printed_char);
 }
 
 static int	printing_string(int char_printed, t_printf p, char *str)
@@ -55,42 +55,42 @@ static int	printing_string(int char_printed, t_printf p, char *str)
 	return (char_printed);
 }
 
-int			printing_only_char(int char_printed, t_printf p)
+int			printing_only_char(int printed_char, t_printf p)
 {
-	char_printed += 1;
-	char_printed += printing_width(p, char_printed);
-	char_printed += printing_padding_of_zero(p, char_printed);
+	printed_char += 1;
+	printed_char += printing_width(p, printed_char);
+	printed_char += printing_padding_of_zero(p, printed_char);
 	ft_putchar(p.conversion_percent);
-	char_printed += print_width_minus(p, char_printed);
-	return (char_printed);
+	printed_char += print_width_minus(p, printed_char);
+	return (printed_char);
 }
 
-static int	printing_char(int char_printed, t_printf p, char c)
+static int	printing_char(int printed_char, t_printf p, char c)
 {
-	char_printed += 1;
-	char_printed += printing_width(p, char_printed);
-	char_printed += printing_padding_of_zero(p, char_printed);
+	printed_char += 1;
+	printed_char += printing_width(p, printed_char);
+	printed_char += printing_padding_of_zero(p, printed_char);
 	ft_putchar(c);
-	char_printed += print_width_minus(p, char_printed);
-	return (char_printed);
+	printed_char += print_width_minus(p, printed_char);
+	return (printed_char);
 }
 
 int			printing_string_char(va_list *arg, t_printf p)
 {
-	int		char_printed;
+	int		printed_char;
 	char	c;
-	char	*str;
+	char	*string;
 
-	char_printed = 0;
+	printed_char = 0;
 	if (p.conversion_percent == 'c')
 	{
 		c = (char)va_arg(*arg, int);
-		char_printed += printing_char(char_printed, p, c);
+		printed_char += printing_char(printed_char, p, c);
 	}
 	else if (p.conversion_percent == 's')
 	{
-		str = (char *)va_arg(*arg, char *);
-		char_printed += printing_string(char_printed, p, str);
+		string = (char *)va_arg(*arg, char *);
+		printed_char += printing_string(printed_char, p, string);
 	}
-	return (char_printed);
+	return (printed_char);
 }

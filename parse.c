@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:55 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 16:52:17 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 19:25:10 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static int 	dispatch_conversion(va_list *arg, char **str, t_printf p)
 	return (char_printed);
 }
 
-int 	parse_percentage(va_list *arg, char **format)
+int 	parsing_percent(va_list *arg, char **format)
 {
 	int			i;
 	t_printf	p;

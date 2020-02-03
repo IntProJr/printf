@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:40:25 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 19:21:29 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 20:54:58 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,26 @@ static int	print_x(va_list *arg, int char_printed, t_printf p)
 	char_printed += print_x_l(char_printed, p, nb);
 	return (char_printed);
 }
+
+long double	ft_va_arg(va_list *arg, t_printf p)
+{
+	long double nb;
+
+	if (p.bl)
+		nb = (long double)va_arg(*arg, long double);
+	else
+		nb = (double)va_arg(*arg, double);
+	return (nb);
+}
+
 int 	print_num(va_list *arg, t_printf p)
 {
 	int 	char_printed;
 	char	c;
+	long double flt;
+	t_str_and_size ss;
+
+	 flt = ft_va_arg(arg, p);
 
 	char_printed = 0;
 	c = p.conversion_percent;
@@ -116,6 +132,11 @@ int 	print_num(va_list *arg, t_printf p)
 		char_printed += print_o(arg, char_printed, p);
 	else if (c == 'x' || c == 'X')
 		char_printed += print_x(arg, char_printed, p);
-
+	else if (c == 'f' || c == 'F')
+	{
+		ss = ft_flt_to_str(flt, p.precision == -1 ? 6 : p.precision);
+		char_printed += (int)ss.sz;
+		ft_putstr(ss.str);
+	}
 	return (char_printed);
 }

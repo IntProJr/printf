@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:42 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 18:28:49 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 20:14:56 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,14 @@ typedef struct	s_printf
 	int			nan;	// ???????????????
 }				t_printf;
 
+typedef struct	s_str_and_size
+{
+	char*			str;
+	unsigned int	sz;
+}				t_str_and_size;
+
 int 			ft_printf(const char *format, ...);
-int 			parse_percentage(va_list *arg, char **format);
+int 			parsing_percent(va_list *arg, char **format);
 
 
 int				width(char *str);
@@ -86,7 +92,7 @@ int				hash_length(t_printf p, long long nb);
 /*
  * char
  */
-int				printing_only_char(int char_printed, t_printf p);
+int				printing_only_char(int printed_char, t_printf p);
 int				printing_string_char(va_list *arg, t_printf p);
 int				print_ptr(int char_printed, va_list *arg ,t_printf p);
 //static void		ft_print_ptr(size_t nb);
@@ -116,5 +122,21 @@ size_t			ft_u_len_base(unsigned long long int nb, char base);
 int				ft_hex_len(unsigned long long nb);
 void			ft_print_u_hex(unsigned long long nb, const char *str);
 size_t			ft_ptr_len_base(size_t ptr, unsigned int base);
+
+/*
+ * Igor float
+ */
+
+t_str_and_size		ft_flt_to_str(double flt, int prcsn);
+
+unsigned long int	ft_abs(long n);
+unsigned int		ft_gt_dpth(long n);
+char				*ft_itoa(long n,char*fresh, int i1);
+void				ft_bzero(void *s, size_t n);
+double				ft_gt_rmndr(double flt);
+void				ft_putnbr_fd(int n, int fd);
+void				ft_putchar_fd(char c, int fd);
+
+
 
 #endif //PRINTF_FT_PRINTF_H
