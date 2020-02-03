@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:42 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 16:45:13 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 18:28:49 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int				print_d_longlong(int char_printed, t_printf p, long long nb);
 size_t			ft_longlong_len(long long nbr);
 int				print_space(t_printf p, long long nb);
 int				print_plus(t_printf p, long long nb);
-int				print_width(t_printf p, int written);
-int				print_zero_padding(t_printf p, int char_printed);
+int				printing_width(t_printf p, int written);
+int				printing_padding_of_zero(t_printf p, int char_printed);
 int				print_precision(t_printf p, long long nb, int nb_len);
 int				print_width_minus(t_printf p, int char_printed);
 
@@ -86,8 +86,8 @@ int				hash_length(t_printf p, long long nb);
 /*
  * char
  */
-int				print_simple_char(int char_printed, t_printf p);
-int				print_sc(va_list *arg, t_printf p);
+int				printing_only_char(int char_printed, t_printf p);
+int				printing_string_char(va_list *arg, t_printf p);
 int				print_ptr(int char_printed, va_list *arg ,t_printf p);
 //static void		ft_print_ptr(size_t nb);
 

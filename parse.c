@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:55 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 16:45:13 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 16:52:17 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ static int 	dispatch_conversion(va_list *arg, char **str, t_printf p)
 	if(ft_strchr("fFxXuUoOidD", p.conversion_percent))
 		char_printed = print_num(arg, p);
 	else if (ft_strchr("sc", p.conversion_percent))
-		char_printed = print_sc(arg, p);
+		char_printed = printing_string_char(arg, p);
 	else if (p.conversion_percent == 'p')
 		char_printed = print_ptr(char_printed, arg, p);
 	else
-		char_printed = print_simple_char(char_printed, p);
+		char_printed = printing_only_char(char_printed, p);
 	*str = &(*str)[i];
 	return (char_printed);
 }

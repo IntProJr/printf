@@ -6,13 +6,13 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 18:17:52 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 16:45:13 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 18:28:49 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	print_width(t_printf p, int written)
+int	printing_width(t_printf p, int written)
 {
 	int	spaces_printed;
 	int	i;
@@ -40,7 +40,7 @@ int	print_width(t_printf p, int written)
 	return (spaces_printed);
 }
 
-int print_zero_padding(t_printf p, int char_printed)
+int printing_padding_of_zero(t_printf p, int char_printed)
 {
 	int zero_printed;
 	int i;

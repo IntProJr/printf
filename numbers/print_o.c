@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 19:21:34 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 20:01:01 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 18:28:49 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static int 	print_u_o_long(int char_printed, t_printf p, unsigned long long nb)
 	if (p.hash == 1 && ((nb_len >= p.precision && nb != 0)
 		|| (p.precision == -1 && nb == 0)))
 		char_printed++;
-	char_printed += print_width(p, char_printed + (prec > 0 ? prec : 0));
+	char_printed += printing_width(p, char_printed + (prec > 0 ? prec : 0));
 	if (p.hash == 1 && ((nb_len >= p.precision &&nb != 0)
 		|| (p.precision == -1 && nb == 0)))
 		print_hash(p, nb);
 	char_printed += print_precision(p, nb, nb_len);
-	char_printed += print_zero_padding(p, char_printed);
+	char_printed += printing_padding_of_zero(p, char_printed);
 	if (!(p.precision == -1 && nb == 0))
 		ft_put_u_longlong_base(nb, 8);
 	char_printed += print_width_minus(p, char_printed);
@@ -76,10 +76,10 @@ int 	print_o_longlong(int char_printed, t_printf p, long long nb)
 			p.precision -= 1;
 		char_printed += 1;
 	}
-	char_printed += print_width(p, char_printed + (prec > 0 ? prec : 0));
+	char_printed += printing_width(p, char_printed + (prec > 0 ? prec : 0));
 	print_hash(p, nb);
 	char_printed += print_precision(p, nb, nb_len);
-	char_printed += print_zero_padding(p, char_printed);
+	char_printed += printing_padding_of_zero(p, char_printed);
 	if (p.precision != -1 || nb != 0)
 		ft_put_u_longlong_base(nb, 8);
 	char_printed += print_width_minus(p, char_printed);

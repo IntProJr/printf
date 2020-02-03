@@ -6,7 +6,7 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 18:53:19 by lrosalee          #+#    #+#             */
-/*   Updated: 2019/11/25 18:53:22 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 18:28:49 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ int 	print_d_longlong(int char_printed, t_printf p, long long nb)
 		char_printed += p.precision - nb_len;
 	if (p.precision > 0 && p.precision >= nb_len && nb < 0)
 		char_printed += p.precision - nb_len + 1;
-	char_printed += print_width(p, char_printed);
+	char_printed += printing_width(p, char_printed);
 	print_plus(p, nb);
 	if (nb < 0)
 		ft_putchar('-');
-	char_printed += print_zero_padding(p, char_printed);
+	char_printed += printing_padding_of_zero(p, char_printed);
 	print_precision(p, nb, nb_len);
 	if (!(p.precision == -1 && nb == 0))
 		ft_put_longlong_d(nb);

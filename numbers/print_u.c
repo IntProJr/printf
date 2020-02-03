@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 17:27:38 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 19:12:44 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/03 18:28:49 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int print_u_l(int char_printed, t_printf p, unsigned long long nb)
 		char_printed += len;
 	if (prec > 0 && prec > len)
 		char_printed += prec - len;
-	char_printed += print_width(p, char_printed);
-	char_printed += print_zero_padding(p, char_printed);
+	char_printed += printing_width(p, char_printed);
+	char_printed += printing_padding_of_zero(p, char_printed);
 	print_precision(p, nb, len);
 	if (!(prec == -1 && nb == 0))
 		ft_put_u_longlong_base(nb, 10);
