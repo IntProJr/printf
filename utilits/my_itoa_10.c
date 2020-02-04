@@ -50,9 +50,3 @@ char				*ft_itoa(long n,char*fresh, int i1)
 		fresh[--i1] = '-';
 	return (fresh);
 }
-
-// int main ()
-// {
-// 	printf("%s\n",ft_itoa(1234567890123456789));
-// 	return 1;
-// }

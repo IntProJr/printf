@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: u18188899 <u18188899@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:42 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 20:14:56 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/04 19:42:27 by u18188899        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_FT_PRINTF_H
 #define PRINTF_FT_PRINTF_H
+
+// ---- WARNING header below should be deleted before the validation ---- 
+#include <stdio.h>
+// ---- WARNING header above should be deleted before the validation ---- 
 
 #include <stdarg.h>
 #include <unistd.h>
