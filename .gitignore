@@ -4,3 +4,7 @@
 **.idea
 pft/
 pft/
+*.gch
+.vscode
+*a.out*
+*dSYM*
