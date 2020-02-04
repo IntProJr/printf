@@ -6,7 +6,7 @@
 /*   By: u18188899 <u18188899@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:42 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/04 19:42:27 by u18188899        ###   ########.fr       */
+/*   Updated: 2020/02/04 20:43:48 by u18188899        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,13 +131,14 @@ size_t			ft_ptr_len_base(size_t ptr, unsigned int base);
  * Igor float
  */
 
-t_str_and_size		ft_flt_to_str(double flt, int prcsn);
+t_str_and_size		ft_flt_to_str(long double flt, int prcsn);
 
 unsigned long int	ft_abs(long n);
-unsigned int		ft_gt_dpth(long n);
-char				*ft_itoa(long n,char*fresh, int i1);
+unsigned int		ft_gt_dpth(long n, int sign);
+char				*ft_itoa(long n,char*fresh, int i1, int sign);
 void				ft_bzero(void *s, size_t n);
-double				ft_gt_rmndr(double flt);
+int					ft_sign(long double t);
+long double			ft_gt_rmndr(long double flt);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putchar_fd(char c, int fd);
 

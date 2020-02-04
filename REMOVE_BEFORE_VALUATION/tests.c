@@ -97,11 +97,9 @@ int main(){
 	double			var;
 	t_str_and_size	var_t_str_and_size;
 
-	var = -7.00036;
+	var = -6.000000;
 
 	printf("%.6f\n", var);
-	printf("%li\n", (long)var);
-
 	var_t_str_and_size = ft_flt_to_str(var, 6);
 	printf("%s\n",var_t_str_and_size.str);
 	return 0;

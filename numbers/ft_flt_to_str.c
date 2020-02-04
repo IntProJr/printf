@@ -6,7 +6,7 @@
 /*   By: u18188899 <u18188899@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 10:45:10 by u18188899         #+#    #+#             */
-/*   Updated: 2020/02/04 19:48:20 by u18188899        ###   ########.fr       */
+/*   Updated: 2020/02/04 20:44:58 by u18188899        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@
 
 #include "../ft_printf.h"
 
-t_str_and_size		ft_flt_to_str(double flt, int prcsn)
+t_str_and_size		ft_flt_to_str(long double flt, int prcsn)
 {
 	t_str_and_size		rslt;
 	int					i1;
-	double				rmndr;
-	double				rnd;
+	long double				rmndr;
+	long double				rnd;
 	
 
 	i1 = 0;
 	rnd = 1.0;
 	
 	rmndr = ft_gt_rmndr(flt);
-	rslt.sz = ft_gt_dpth((long)flt);
+	rslt.sz = ft_gt_dpth((long)flt, ft_sign(flt));
 	if (!(rslt.str = (char*)malloc(sizeof(char) * (rslt.sz + prcsn + 2))))
 		return (rslt);
 	ft_bzero(rslt.str,(size_t)(rslt.sz + prcsn + 2));
@@ -64,13 +64,13 @@ t_str_and_size		ft_flt_to_str(double flt, int prcsn)
 
 		// flt = (double)((int)flt) + ((double)((int)(rmndr * mltplr))) / mltplr + rnd;
 
-		flt += rnd;
+		flt += ft_sign(flt)*rnd;
 	}
 	// else if (rmndr <= 0.5):
 		// flt has less, equal digits after point, than precision needed or remainder after precision
 		// is not important (after rounding it won't change last digit)
-	rslt.sz = ft_gt_dpth((long)flt);
-	ft_itoa((long)flt,rslt.str, rslt.sz);
+	rslt.sz = ft_gt_dpth((long)flt, ft_sign(flt));
+	ft_itoa((long)flt,rslt.str, rslt.sz, ft_sign(flt));
 	i1 = 1;
 	rmndr = ft_gt_rmndr(flt);
 	while (i1 <= prcsn)
@@ -85,9 +85,9 @@ t_str_and_size		ft_flt_to_str(double flt, int prcsn)
 	return rslt;
 }
 
-double		ft_gt_rmndr(double flt)
+long double		ft_gt_rmndr(long double flt)
 {
-	double rmndr;
+	long double rmndr;
 	
 	rmndr = (flt - (long)flt);
 	if (rmndr < 0)
@@ -95,7 +95,7 @@ double		ft_gt_rmndr(double flt)
 	return rmndr;
 }
 
-int		ft_sign(long long t)
+int		ft_sign(long double t)
 {
 	if (t < 0)
 		return -1;
