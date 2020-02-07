@@ -6,13 +6,13 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 18:18:48 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/31 18:18:48 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/07 15:18:37 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int ft_hex_len(unsigned long long nb)
+int	ft_hex_len(unsigned long long nb)
 {
 	int char_printed;
 

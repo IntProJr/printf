@@ -6,20 +6,19 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 20:00:49 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 16:45:13 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/07 15:45:23 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int print_hash(t_printf p, long long nb)
+int		print_hash(t_printf p, long long nb)
 {
 	int		i;
 	char	c;
 
 	c = p.conversion_percent;
 	i = ft_u_len_base(nb, 8);
-
 	if (p.hash && ft_strchr("oO", c) && nb != 0 && i >= p.precision)
 		return (write(1, "0", 1));
 	if (p.hash && ft_strchr("oO", c) && p.precision == -1 && nb == 0)
@@ -55,7 +54,7 @@ int		print_space(t_printf p, long long nb)
 	return (0);
 }
 
-int print_plus(t_printf p, long long nb)
+int		print_plus(t_printf p, long long nb)
 {
 	if (p.znak_plus && nb >= 0 && !ft_strchr("uU", p.conversion_percent))
 	{

@@ -6,11 +6,11 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:56:43 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/01 16:14:30 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/07 15:18:37 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int 	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	char	sign;
 	char	was_sign;
@@ -18,7 +18,7 @@ int 	ft_atoi(const char *str)
 	long	num;
 
 	i = 0;
-	while(('\t' <= str[i] && str[i] <= '\r') || str[i] == ' ')
+	while (('\t' <= str[i] && str[i] <= '\r') || str[i] == ' ')
 		i++;
 	sign = 1;
 	if (str[i] == '-')
@@ -31,7 +31,7 @@ int 	ft_atoi(const char *str)
 	{
 		num = num * 10 + (str[i] - '0');
 		if (num < 0 && was_sign == 1)
-				return (-1);
+			return (-1);
 		else if (num < 0 && was_sign == -1)
 			return (0);
 		i++;

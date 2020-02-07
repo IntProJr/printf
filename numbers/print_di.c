@@ -6,12 +6,11 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 18:53:19 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 18:28:49 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/07 15:18:37 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
 
 static void	ft_put_longlong_d(long long nbr)
 {
@@ -23,7 +22,7 @@ static void	ft_put_longlong_d(long long nbr)
 	ft_putchar((nbr % 10) * sign + '0');
 }
 
-int 	print_d_longlong(int char_printed, t_printf p, long long nb)
+int			print_d_longlong(int char_printed, t_printf p, long long nb)
 {
 	int nb_len;
 

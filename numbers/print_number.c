@@ -6,19 +6,19 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:40:25 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 21:00:02 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/07 15:34:16 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int 	print_d(va_list *arg, int char_printed, t_printf p)
+static int	print_d(va_list *arg, int char_printed, t_printf p)
 {
 	long long	nb;
 	char		c;
 
 	c = p.conversion_percent;
-	if (c == 'd' || c == 'i' || c =='D')
+	if (c == 'd' || c == 'i' || c == 'D')
 	{
 		if (p.l == 1 || c == 'D')
 			nb = (long long)va_arg(*arg, long);
@@ -39,9 +39,10 @@ static int 	print_d(va_list *arg, int char_printed, t_printf p)
 	return (char_printed);
 }
 
-static int 	print_o(va_list *arg, int char_printed, t_printf p)
+static int	print_o(va_list *arg, int char_printed, t_printf p)
 {
 	long long	nb;
+
 	if (p.conversion_percent || p.h || p.z || p.j || p.l == 'O')
 		char_printed += print_o_unsigned(arg, char_printed, p);
 	else
@@ -50,7 +51,6 @@ static int 	print_o(va_list *arg, int char_printed, t_printf p)
 		char_printed += print_o_longlong(char_printed, p, nb);
 	}
 	return (char_printed);
-
 }
 
 static int	print_u(va_list *arg, int char_printed, t_printf p)
@@ -102,26 +102,14 @@ static int	print_x(va_list *arg, int char_printed, t_printf p)
 	return (char_printed);
 }
 
-long double	ft_va_arg(va_list *arg, t_printf p)
+int			print_num(va_list *arg, t_printf p)
 {
-	long double nb;
+	int				char_printed;
+	char			c;
+	long double		flt;
+	t_str_and_size	ss;
 
-	if (p.bl)
-		nb = (long double)va_arg(*arg, long double);
-	else
-		nb = (double)va_arg(*arg, double);
-	return (nb);
-}
-
-int 	print_num(va_list *arg, t_printf p)
-{
-	int 	char_printed;
-	char	c;
-	long double flt;
-	t_str_and_size ss;
-
-	 flt = ft_va_arg(arg, p);
-
+	flt = ft_va_arg(arg, p);
 	char_printed = 0;
 	c = p.conversion_percent;
 	if (c == 'd' || c == 'i' || c == 'D')

@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 18:16:21 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/03 18:28:49 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/07 15:18:37 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ static void	ft_print_ptr(size_t nb)
 	}
 }
 
-int 	print_ptr(int char_printed, va_list *arg ,t_printf p)
+int			print_ptr(int char_printed, va_list *arg, t_printf p)
 {
 	void	*ptr;
-	int 	prec;
-	int 	p_len;
+	int		prec;
+	int		p_len;
 
 	prec = 0;
 	ptr = va_arg(*arg, void *);
@@ -48,6 +48,4 @@ int 	print_ptr(int char_printed, va_list *arg ,t_printf p)
 		ft_print_ptr((size_t)ptr);
 	char_printed += print_width_minus(p, char_printed);
 	return (char_printed);
-
-
 }

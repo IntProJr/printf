@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_itoa_10.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/07 17:53:19 by lrosalee          #+#    #+#             */
+/*   Updated: 2020/02/07 17:57:58 by lrosalee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-unsigned long int	ft_abs(long n)
+unsigned long int		ft_abs(long n)
 {
 	unsigned long int	t1;
 
@@ -16,9 +27,9 @@ unsigned long int	ft_abs(long n)
 	return (t1);
 }
 
-unsigned int	ft_gt_dpth(long n, int sign)
+unsigned int			ft_gt_dpth(long n, int sign)
 {
-	unsigned int	i1;
+	unsigned int		i1;
 	unsigned long int	t1;
 
 	if (sign < 0)
@@ -34,7 +45,7 @@ unsigned int	ft_gt_dpth(long n, int sign)
 	return (i1);
 }
 
-char				*ft_itoa(long n,char*fresh, int i1, int sign)
+char					*ft_itoa(long n, char *fresh, int i1, int sign)
 {
 	unsigned long int	t1;
 
@@ -45,7 +56,6 @@ char				*ft_itoa(long n,char*fresh, int i1, int sign)
 		return (fresh);
 	}
 	t1 = ft_abs(n);
-	// fresh[i1] = '\0';
 	while (t1 > 9)
 	{
 		fresh[--i1] = t1 % 10 + '0';

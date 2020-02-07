@@ -6,7 +6,7 @@
 /*   By: u18188899 <u18188899@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 10:45:10 by u18188899         #+#    #+#             */
-/*   Updated: 2020/02/04 20:44:58 by u18188899        ###   ########.fr       */
+/*   Updated: 2020/02/07 15:18:37 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,17 @@
 // [-]nan (f) or [-]NAN (F), respectively.
 
 #include "../ft_printf.h"
+
+long double	ft_va_arg(va_list *arg, t_printf p)
+{
+	long double nb;
+
+	if (p.bl)
+		nb = (long double)va_arg(*arg, long double);
+	else
+		nb = (double)va_arg(*arg, double);
+	return (nb);
+}
 
 t_str_and_size		ft_flt_to_str(long double flt, int prcsn)
 {

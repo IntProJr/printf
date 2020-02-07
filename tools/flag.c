@@ -6,15 +6,15 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 19:53:34 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 19:53:34 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/07 15:41:22 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int 	zero_flag(char *str, int minus)
+int		zero_flag(char *str, int minus)
 {
-	int 	i;
+	int		i;
 	char	*before;
 
 	i = 0;
@@ -40,49 +40,49 @@ int 	zero_flag(char *str, int minus)
 	return (0);
 }
 
-int 	plus_flag(char *str)
+int		plus_flag(char *str)
 {
 	int i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if(str[i] == '+')
-			return(1);
+		if (str[i] == '+')
+			return (1);
 		i++;
 	}
-	return(0);
+	return (0);
 }
 
-int 	minus_flag(char *str)
+int		minus_flag(char *str)
 {
 	int i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if(str[i] == '-')
-			return(1);
+		if (str[i] == '-')
+			return (1);
 		i++;
 	}
-	return(0);
+	return (0);
 }
 
-int 	hash_flag(char *str)
+int		hash_flag(char *str)
 {
 	int i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if(str[i] == '#')
-			return(1);
+		if (str[i] == '#')
+			return (1);
 		i++;
 	}
-	return(0);
+	return (0);
 }
 
-int 	space_flag(char *str, int plus)
+int		space_flag(char *str, int plus)
 {
 	int i;
 
@@ -93,5 +93,5 @@ int 	space_flag(char *str, int plus)
 			return (1);
 		i++;
 	}
-	return(0);
+	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: lrosalee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:16:13 by lrosalee          #+#    #+#             */
-/*   Updated: 2019/11/25 16:16:18 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/07 15:18:37 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char 	*ft_strnew(size_t size)
+char	*ft_strnew(size_t size)
 {
 	char	*str;
 	char	*p;

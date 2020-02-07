@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 17:35:13 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/01/29 17:35:13 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/07 15:18:37 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ size_t		ft_u_longlong_len(unsigned long long nb)
 		nb /= 10;
 		len++;
 	}
-	return	(len);
+	return (len);
 }
