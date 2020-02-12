@@ -36,6 +36,7 @@ add_executable(printf ft_printf.c ft_printf.h parse.c main.c
 		numbers/print_u.c
 		numbers/print_o.c
 		numbers/print_x.c
+		numbers/print_f.c
 
 		char/print_cs.c
 		char/print_ptr.c

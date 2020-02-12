@@ -6,22 +6,12 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:53:56 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/11 17:53:56 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/12 18:12:54 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_FT_PRINTF_H
 # define PRINTF_FT_PRINTF_H
-
-/*
-** WARNING header below should be deleted before the validation
-*/
-
-# include <stdio.h>
-
-/*
-**   WARNING header above should be deleted before the validation
-*/
 
 # include <stdarg.h>
 # include <unistd.h>
@@ -48,12 +38,6 @@ typedef struct		s_printf
 	int				inf;
 	int				nan;
 }					t_printf;
-
-typedef struct		s_str_and_size
-{
-	char			*str;
-	int				sz;
-}					t_str_and_size;
 
 int					ft_printf(const char *format, ...);
 int					parsing_percent(va_list *arg, char **format);
@@ -83,6 +67,7 @@ int					print_u_l(int char_printed, t_printf p,
 int					print_x_l(int char_printed, t_printf p,
 						unsigned long long nb);
 long double			ft_va_arg(va_list *arg, t_printf p);
+int					print_f(va_list *arg, int char_printed, t_printf p);
 /*
 **  			Tools
 */
