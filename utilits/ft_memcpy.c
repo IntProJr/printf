@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_f.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 18:09:17 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/12 18:25:06 by lrosalee         ###   ########.fr       */
+/*   Created: 2020/02/12 18:29:13 by lrosalee          #+#    #+#             */
+/*   Updated: 2020/02/12 18:29:13 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-long double	ft_va_arg(va_list *arg, t_printf p)
+static void	*ft_memcpy(void *s1, const void *s2, size_t n)
 {
-	long double	nb;
+	size_t			i;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
 
-	if (p.bl)
-		nb = (long double)va_arg(*arg, long double);
-	else
-		nb = (long double)va_arg(*arg, double);
-	return (nb);
-}
-
-int		printf_f(va_list *arg, int char_printed, t_printf p)
-{
-	char 		*integer;
-	char		*decimal;
-	long double	nb;
-
-	nb = ft_va_arg(arg, p);
-	p = flag_manager_f(nb, p);
-	if (!p.inf && !p.nan)
+	ptr1 = (unsigned char *)s1;
+	ptr2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		nb = round_ld(nb, p);
+		ptr1[i] = ptr2[i];
+		i++;
 	}
-
-
+	return (s1);
 }
-

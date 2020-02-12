@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:53:56 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/12 18:12:54 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/12 18:59:21 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,9 @@ int					print_u_l(int char_printed, t_printf p,
 						unsigned long long nb);
 int					print_x_l(int char_printed, t_printf p,
 						unsigned long long nb);
-long double			ft_va_arg(va_list *arg, t_printf p);
 int					print_f(va_list *arg, int char_printed, t_printf p);
+char				*integer_f(long double nb);
+
 /*
 **  			Tools
 */
@@ -80,6 +81,8 @@ int					hash_flag(char *str);
 int					space_flag(char *str, int plus);
 int					print_hash(t_printf p, long long nb);
 int					hash_length(t_printf p, long long nb);
+t_printf			flag_manager_f(long double nb, t_printf p);
+int					len_f(long double nb);
 
 /*
 **   			Char
@@ -115,5 +118,7 @@ size_t				ft_u_len_base(unsigned long long int nb, char base);
 int					ft_hex_len(unsigned long long nb);
 void				ft_print_u_hex(unsigned long long nb, const char *str);
 size_t				ft_ptr_len_base(size_t ptr, unsigned int base);
+static void			*ft_memcpy(void *s1, const void *s2, size_t n);
+void				*ft_memalloc(size_t size);
 
 #endif

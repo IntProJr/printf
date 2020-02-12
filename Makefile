@@ -6,7 +6,7 @@
 #    By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 18:42:42 by lrosalee          #+#    #+#              #
-#    Updated: 2020/02/07 15:30:37 by lrosalee         ###   ########.fr        #
+#    Updated: 2020/02/12 18:53:42 by lrosalee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,9 @@ SRCS = ft_printf.c parse.c ./char/print_cs.c \
 		./utilits/ft_put_u_longlong_base.c ./utilits/ft_hex_len.c \
         ./utilits/ft_print_u_hex.c ./utilits/ft_ptr_len_base.c \
         ./utilits/ft_putnbr_fd.c ./utilits/my_itoa_10.c \
-        ./utilits/ft_putchar_fd.c
+        ./utilits/ft_putchar_fd.c ./utilits/ft_memcpy.c \
+        ./tools/round_ld.c ./tools/flag_manager_f.c \
+        ./numbers/float_to_string.c ./utilits/ft_memalloc.c \
 
 
 
@@ -48,7 +50,9 @@ OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
          ./ft_put_u_longlong_base.o ./ft_hex_len.o \
          ./print_x.o ./ft_print_u_hex.o ./print_ptr.o \
          ./ft_ptr_len_base.o ./ft_putnbr_fd.o ./my_itoa_10.o \
-         ./ft_putchar_fd.o ./ft_flt_to_str.o \
+         ./ft_putchar_fd.o ./ft_flt_to_str.o ./ft_memcpy.o\
+         round_ld.o flag_manager_f.o float_to_string.o \
+         ft_memalloc.o
 
 
 
