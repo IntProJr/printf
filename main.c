@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 18:20:09 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/12 22:55:20 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/12 22:55:33 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -14,7 +14,7 @@
 
 int main (int argc, char *argv[])
 {
-	ft_printf("%llX\n", 4294967296);
-	printf("%llX", 4294967296);
+	ft_printf("{%f}{%lf}{%Lf}\n", 1.42, 1.42, 1.42l);
+	printf("{%f}{%lf}{%Lf}", 1.42, 1.42, 1.42l);
 }
 

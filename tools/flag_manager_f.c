@@ -6,18 +6,18 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 18:25:11 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/12 18:38:28 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/12 23:15:37 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int 	is_nan(long double nb)
+static int			is_nan(long double nb)
 {
 	return (!(nb == nb));
 }
 
-static int 	is_inf(long double nb)
+static int			is_inf(long double nb)
 {
 	if (nb == (1.0 / 0.0) || nb == -(1.0 / 0.0))
 		return (1);
@@ -25,7 +25,7 @@ static int 	is_inf(long double nb)
 		return (0);
 }
 
-static void		*ft_memcpy(void *s1, const void *s2, size_t n)
+static void			*ft_memcpy(void *s1, const void *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*ptr1;
@@ -42,11 +42,12 @@ static void		*ft_memcpy(void *s1, const void *s2, size_t n)
 	return (s1);
 }
 
-t_printf		flag_manager_f(long double nb, t_printf p)
+t_printf			flag_manager_f(long double nb, t_printf p)
 {
 	__int128	sign;
+
 	ft_memcpy(&sign, &nb, 8);
-	sign = sign &((__int128)1 << 79);
+	sign = sign & ((__int128)1 << 79);
 	if (sign)
 		p.znak_plus = -1;
 	if (!p.precision)

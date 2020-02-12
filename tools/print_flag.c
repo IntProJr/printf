@@ -6,13 +6,13 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 20:00:49 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/07 15:45:23 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/12 22:45:46 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	print_hash(t_printf p, long long nb)
+int		print_hash(t_printf p, long long nb)
 {
 	char	c;
 	int		i;
@@ -30,7 +30,7 @@ int	print_hash(t_printf p, long long nb)
 	return (0);
 }
 
-int	hash_length(t_printf p, long long nb)
+int		hash_length(t_printf p, long long nb)
 {
 	if (p.hash && ft_strchr("oO", p.conversion_percent) && nb != 0)
 		return (1);
