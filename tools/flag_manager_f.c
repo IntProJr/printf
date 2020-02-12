@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 18:25:11 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/12 18:29:09 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/12 18:38:28 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,23 @@ static int 	is_inf(long double nb)
 		return (1);
 	else
 		return (0);
+}
+
+static void		*ft_memcpy(void *s1, const void *s2, size_t n)
+{
+	size_t			i;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
+
+	ptr1 = (unsigned char *)s1;
+	ptr2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
+	{
+		ptr1[i] = ptr2[i];
+		i++;
+	}
+	return (s1);
 }
 
 t_printf		flag_manager_f(long double nb, t_printf p)

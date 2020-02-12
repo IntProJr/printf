@@ -19,7 +19,7 @@ static int	printing_string_null(int printed_char, t_printf p)
 	prec = p.precision;
 	printed_char += 6;
 	printed_char += printing_width(p, printed_char);
-	printed_char += printing_padding_of_zero(p, printed_char);
+	printed_char += print_zero_padding(p, printed_char);
 	if (prec > 0)
 		ft_putnstr("(null)", prec);
 	else if (prec != -1)
@@ -43,7 +43,7 @@ static int	printing_string(int char_printed, t_printf p, char *str)
 		else if (str && prec > 0)
 			char_printed += (int)ft_strlen(str);
 		char_printed += printing_width(p, char_printed);
-		char_printed += printing_padding_of_zero(p, char_printed);
+		char_printed += print_zero_padding(p, char_printed);
 		if (prec > 0)
 			ft_putnstr(str, prec);
 		else if (prec != -1)
@@ -59,7 +59,7 @@ int			printing_only_char(int printed_char, t_printf p)
 {
 	printed_char += 1;
 	printed_char += printing_width(p, printed_char);
-	printed_char += printing_padding_of_zero(p, printed_char);
+	printed_char += print_zero_padding(p, printed_char);
 	ft_putchar(p.conversion_percent);
 	printed_char += print_width_minus(p, printed_char);
 	return (printed_char);
@@ -69,7 +69,7 @@ static int	printing_char(int printed_char, t_printf p, char c)
 {
 	printed_char += 1;
 	printed_char += printing_width(p, printed_char);
-	printed_char += printing_padding_of_zero(p, printed_char);
+	printed_char += print_zero_padding(p, printed_char);
 	ft_putchar(c);
 	printed_char += print_width_minus(p, printed_char);
 	return (printed_char);

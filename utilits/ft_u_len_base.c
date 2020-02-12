@@ -17,7 +17,7 @@ size_t	ft_u_len_base(unsigned long long int nb, char base)
 	size_t	len;
 
 	len = 1;
-	while (nb > (unsigned long long)base)
+	while (nb >= (unsigned long long)base)
 	{
 		nb /= base;
 		len++;

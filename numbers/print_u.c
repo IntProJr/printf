@@ -26,7 +26,7 @@ int	print_u_l(int char_printed, t_printf p, unsigned long long nb)
 	if (prec > 0 && prec > len)
 		char_printed += prec - len;
 	char_printed += printing_width(p, char_printed);
-	char_printed += printing_padding_of_zero(p, char_printed);
+	char_printed += print_zero_padding(p, char_printed);
 	print_precision(p, nb, len);
 	if (!(prec == -1 && nb == 0))
 		ft_put_u_longlong_base(nb, 10);

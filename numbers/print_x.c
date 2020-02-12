@@ -25,7 +25,7 @@ int	print_x_l(int char_printed, t_printf p, unsigned long long nb)
 	char_printed += printing_width(p, char_printed + (prec > 0 ? prec : 0));
 	print_hash(p, nb);
 	char_printed += print_precision(p, nb, ft_hex_len(nb));
-	char_printed += printing_padding_of_zero(p, char_printed);
+	char_printed += print_zero_padding(p, char_printed);
 	if (!(p.precision == -1 && nb == 0))
 	{
 		if (p.conversion_percent == 'x')

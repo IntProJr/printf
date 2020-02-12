@@ -40,7 +40,7 @@ int			print_d_longlong(int char_printed, t_printf p, long long nb)
 	print_plus(p, nb);
 	if (nb < 0)
 		ft_putchar('-');
-	char_printed += printing_padding_of_zero(p, char_printed);
+	char_printed += print_zero_padding(p, char_printed);
 	print_precision(p, nb, nb_len);
 	if (!(p.precision == -1 && nb == 0))
 		ft_put_longlong_d(nb);

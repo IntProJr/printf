@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_put_longlong_base.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 18:29:13 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/12 18:29:13 by lrosalee         ###   ########.fr       */
+/*   Created: 2020/02/12 22:06:58 by lrosalee          #+#    #+#             */
+/*   Updated: 2020/02/12 22:09:26 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static void	*ft_memcpy(void *s1, const void *s2, size_t n)
+void	ft_put_longlong_base(long long nbr, char base)
 {
-	size_t			i;
-	unsigned char	*ptr1;
-	unsigned char	*ptr2;
+	unsigned long long nb;
 
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
+	if (base > 1 && base <= 10)
 	{
-		ptr1[i] = ptr2[i];
-		i++;
+		if (nbr < 0)
+		{
+			ft_putchar('-');
+			if (nbr != LONG_LONG_MIN)
+				nbr *= -1;
+		}
+		nb = nbr;
+		if (nb >= (unsigned long long)base)
+			ft_put_longlong_base(nb / base, base);
+		ft_putchar(nb % base + '0');
 	}
-	return (s1);
+	else if (base == 1)
+		ft_putnchar('1', nbr);
 }

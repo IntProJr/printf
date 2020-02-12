@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 18:38:31 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/12 18:43:23 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/12 19:05:53 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,28 @@ int 			len_f(long double nb)
 	return (len);
 }
 
+long double		ft_atof(char *s)
+{
+	long double	nb;
+
+	nb = 0;
+	while (*s)
+	{
+		nb *= 10;
+		nb += (long double)(*s - '0');
+		s++;
+	}
+	return (nb);
+}
+
+static int 		ft_even(char *str)
+{
+	int i;
+
+	i = ((str[ft_strlen(str) - 1] - '0') % 2);
+	return (i);
+}
+
 long double		round_ld(long double nb, t_printf p)
 {
 	long double	temp;
@@ -54,5 +76,10 @@ long double		round_ld(long double nb, t_printf p)
 		p.precision = 0;
 	nb = nb < 0 ? -nb : nb;
 	temp = nb * ft_pow(p.precision);
-	integer_s = integer_f
+	integer_s = integer_f(temp);
+	temp -= ft_atof(integer_s);
+	free(integer_s);
+	if (temp > 0.5 || (temp == 0.5 && ft_even(integer_s)))
+		nb += 0.5 * ft_pow(-p.precision);
+	return (nb);
 }

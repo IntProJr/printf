@@ -12,13 +12,13 @@
 
 #include "../ft_printf.h"
 
-int		print_hash(t_printf p, long long nb)
+int	print_hash(t_printf p, long long nb)
 {
-	int		i;
 	char	c;
+	int		i;
 
-	c = p.conversion_percent;
 	i = ft_u_len_base(nb, 8);
+	c = p.conversion_percent;
 	if (p.hash && ft_strchr("oO", c) && nb != 0 && i >= p.precision)
 		return (write(1, "0", 1));
 	if (p.hash && ft_strchr("oO", c) && p.precision == -1 && nb == 0)
@@ -30,7 +30,7 @@ int		print_hash(t_printf p, long long nb)
 	return (0);
 }
 
-int		hash_length(t_printf p, long long nb)
+int	hash_length(t_printf p, long long nb)
 {
 	if (p.hash && ft_strchr("oO", p.conversion_percent) && nb != 0)
 		return (1);

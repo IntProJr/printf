@@ -6,7 +6,7 @@
 #    By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 18:42:42 by lrosalee          #+#    #+#              #
-#    Updated: 2020/02/12 18:53:42 by lrosalee         ###   ########.fr        #
+#    Updated: 2020/02/12 22:17:50 by lrosalee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libftprintf.a
 SRCS = ft_printf.c parse.c ./char/print_cs.c \
         ./char/print_ptr.c \
 		./numbers/print_di.c ./numbers/print_number.c \
-		./numbers/print_x.c ./numbers/ft_flt_to_str.c \
+		./numbers/print_x.c ./numbers/print_f.c\
 		./tools/flag.c ./tools/length.c ./tools/precision.c \
 		./tools/print_flag.c ./tools/print_padding.c \
 		./tools/width.c \
@@ -28,15 +28,15 @@ SRCS = ft_printf.c parse.c ./char/print_cs.c \
 		./utilits/ft_putnchar.c ./numbers/print_o.c ./utilits/ft_u_len_base.c \
 		./utilits/ft_put_u_longlong_base.c ./utilits/ft_hex_len.c \
         ./utilits/ft_print_u_hex.c ./utilits/ft_ptr_len_base.c \
-        ./utilits/ft_putnbr_fd.c ./utilits/my_itoa_10.c \
-        ./utilits/ft_putchar_fd.c ./utilits/ft_memcpy.c \
         ./tools/round_ld.c ./tools/flag_manager_f.c \
         ./numbers/float_to_string.c ./utilits/ft_memalloc.c \
+        ./utilits/ft_put_longlong_base.c ./utilits/ft_len_base.c\
 
 
 
 OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
          ./print_di.o ./print_number.o \
+         ./print_f.o \
          ./flag.o length.o ./precision.o \
          ./print_flag.o ./print_padding.o \
          ./width.o \
@@ -45,14 +45,14 @@ OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
          ./ft_putstr.o ./ft_str_multi_chr.o ./ft_strchr.o \
          ./ft_strcmp.o ./ft_strlen.o ./ft_strncpy.o \
          ./ft_strndup.o ./ft_strnew.o ./print_u.o \
-         ./ft_u_longlong_len.o  \
+         ./ft_u_longlong_len.o \
          ./ft_putnchar.o ./print_o.o ./ft_u_len_base.o \
          ./ft_put_u_longlong_base.o ./ft_hex_len.o \
          ./print_x.o ./ft_print_u_hex.o ./print_ptr.o \
-         ./ft_ptr_len_base.o ./ft_putnbr_fd.o ./my_itoa_10.o \
-         ./ft_putchar_fd.o ./ft_flt_to_str.o ./ft_memcpy.o\
+         ./ft_ptr_len_base.o \
          round_ld.o flag_manager_f.o float_to_string.o \
-         ft_memalloc.o
+         ft_memalloc.o ft_put_longlong_base.o \
+         ft_len_base.o \
 
 
 

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_len_base.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: u18188899 <u18188899@student.42.fr>        +#+  +:+       +#+        */
+/*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/04 09:47:52 by klekisha          #+#    #+#             */
-/*   Updated: 2020/02/07 15:18:37 by lrosalee         ###   ########.fr       */
+/*   Created: 2020/02/12 22:08:14 by lrosalee          #+#    #+#             */
+/*   Updated: 2020/02/12 22:08:14 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+size_t	ft_len_base(long long nb, char base)
 {
-	unsigned int	n1;
+	size_t len;
 
-	if (n < 0)
+	len = 1;
+	if (nb < 0)
 	{
-		ft_putchar_fd('-', fd);
-		n1 = (unsigned int)(-n);
+		len++;
+		nb = -nb;
 	}
-	else
-		n1 = (unsigned int)n;
-	if (n1 >= 10)
-		ft_putnbr_fd(n1 / 10, fd);
-	ft_putchar_fd(n1 % 10 + '0', fd);
+	while (nb >= base)
+	{
+		nb = nb / base;
+		len++;
+	}
+	return (len);
 }

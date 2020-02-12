@@ -42,7 +42,7 @@ int			print_ptr(int char_printed, va_list *arg, t_printf p)
 		prec = p.precision - (ptr < 0 ? p_len - 1 : p_len);
 	char_printed += printing_width(p, char_printed + (prec > 0 ? prec : 0));
 	ft_putstr("0x");
-	char_printed += printing_padding_of_zero(p, char_printed);
+	char_printed += print_zero_padding(p, char_printed);
 	char_printed += print_precision(p, (int)ptr, p_len);
 	if (!(p.precision == -1 && ptr == 0))
 		ft_print_ptr((size_t)ptr);

@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:53:56 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/12 18:59:21 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/12 22:15:31 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int					length(char *str, char c);
 int					print_space(t_printf p, long long nb);
 int					print_plus(t_printf p, long long nb);
 int					printing_width(t_printf p, int written);
-int					printing_padding_of_zero(t_printf p, int char_printed);
+int					print_zero_padding(t_printf p, int char_printed);
 int					print_precision(t_printf p, long long nb, int nb_len);
 int					print_width_minus(t_printf p, int char_printed);
 
@@ -68,6 +68,8 @@ int					print_x_l(int char_printed, t_printf p,
 						unsigned long long nb);
 int					print_f(va_list *arg, int char_printed, t_printf p);
 char				*integer_f(long double nb);
+char 				*decimal_f(long double nb, t_printf p, char *integer_f);
+int					write_f(t_printf p, char *integer, char *dec, long double nb);
 
 /*
 **  			Tools
@@ -83,6 +85,8 @@ int					print_hash(t_printf p, long long nb);
 int					hash_length(t_printf p, long long nb);
 t_printf			flag_manager_f(long double nb, t_printf p);
 int					len_f(long double nb);
+long double			round_ld(long double nb, t_printf p);
+long double			ft_atof(char *s);
 
 /*
 **   			Char
@@ -118,7 +122,8 @@ size_t				ft_u_len_base(unsigned long long int nb, char base);
 int					ft_hex_len(unsigned long long nb);
 void				ft_print_u_hex(unsigned long long nb, const char *str);
 size_t				ft_ptr_len_base(size_t ptr, unsigned int base);
-static void			*ft_memcpy(void *s1, const void *s2, size_t n);
 void				*ft_memalloc(size_t size);
-
+void				ft_put_longlong_base(long long nbr, char base);
+size_t				ft_len_base(long long nb, char base);
+int					print_o_longlong(int char_printed, t_printf p, long long nb);
 #endif

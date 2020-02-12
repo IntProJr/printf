@@ -40,7 +40,7 @@ int	printing_width(t_printf p, int written)
 	return (spaces_printed);
 }
 
-int	printing_padding_of_zero(t_printf p, int char_printed)
+int	print_zero_padding(t_printf p, int char_printed)
 {
 	int zero_printed;
 	int i;

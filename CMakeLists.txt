@@ -29,7 +29,6 @@ add_executable(printf ft_printf.c ft_printf.h parse.c main.c
 		utilits/ft_hex_len.c
 		utilits/ft_print_u_hex.c
 		utilits/ft_ptr_len_base.c
-		utilits/ft_memcpy.c
 
 		numbers/print_di.c
 		numbers/print_number.c
@@ -49,10 +48,10 @@ add_executable(printf ft_printf.c ft_printf.h parse.c main.c
 		tools/flag.c
 
 		utilits/ft_u_len_base.c
-
-
 		utilits/ft_ptr_len_base.c
 		tools/flag_manager_f.c
 		tools/round_ld.c
 		numbers/float_to_string.c
-		utilits/ft_memalloc.c)
+		utilits/ft_memalloc.c
+		utilits/ft_len_base.c
+		utilits/ft_put_longlong_base.c)
