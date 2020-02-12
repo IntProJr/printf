@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: u18188899 <u18188899@student.42.fr>        +#+  +:+       +#+        */
+/*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 16:16:42 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/07 17:12:01 by lrosalee         ###   ########.fr       */
+/*   Created: 2020/02/11 17:53:56 by lrosalee          #+#    #+#             */
+/*   Updated: 2020/02/11 17:53:56 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,16 +131,4 @@ int					ft_hex_len(unsigned long long nb);
 void				ft_print_u_hex(unsigned long long nb, const char *str);
 size_t				ft_ptr_len_base(size_t ptr, unsigned int base);
 
-/*
-** 			Igor_float
-*/
-
-t_str_and_size		ft_flt_to_str(long double flt, int prcsn);
-unsigned long int	ft_abs(long n);
-unsigned int		ft_gt_dpth(long n, int sign);
-char				*ft_itoa(long n, char *fresh, int i1, int sign);
-int					ft_sign(long double t);
-long double			ft_gt_rmndr(long double flt);
-void				ft_putnbr_fd(int n, int fd);
-void				ft_putchar_fd(char c, int fd);
 #endif

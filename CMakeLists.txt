@@ -29,8 +29,6 @@ add_executable(printf ft_printf.c ft_printf.h parse.c main.c
 		utilits/ft_hex_len.c
 		utilits/ft_print_u_hex.c
 		utilits/ft_ptr_len_base.c
-		utilits/my_itoa_10.c
-
 
 
 		numbers/print_di.c
@@ -38,7 +36,6 @@ add_executable(printf ft_printf.c ft_printf.h parse.c main.c
 		numbers/print_u.c
 		numbers/print_o.c
 		numbers/print_x.c
-		numbers/ft_flt_to_str.c
 
 		char/print_cs.c
 		char/print_ptr.c
