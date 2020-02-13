@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:53:56 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/12 23:02:45 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/13 17:20:58 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct		s_printf
 	int				h;
 	int				inf;
 	int				nan;
+	long double		drob;
 }					t_printf;
 
 int					ft_printf(const char *format, ...);
@@ -68,7 +69,7 @@ int					print_x_l(int char_printed, t_printf p,
 						unsigned long long nb);
 int					print_f(va_list *arg, int char_printed, t_printf p);
 char				*integer_f(long double nb);
-char				*decimal_f(long double nb, t_printf p, char *integer_f);
+char				*decimal_f(long double nb, t_printf *p, char *integer_f);
 int					write_f(t_printf p, char *integer, char *dec,
 						long double nb);
 
@@ -128,4 +129,5 @@ void				ft_put_longlong_base(long long nbr, char base);
 size_t				ft_len_base(long long nb, char base);
 int					print_o_longlong(int char_printed, t_printf p,
 						long long nb);
+char				*ft_itoa(int n);
 #endif

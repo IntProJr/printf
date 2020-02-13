@@ -6,7 +6,7 @@
 /*   By: lrosalee <lrosalee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 18:09:17 by lrosalee          #+#    #+#             */
-/*   Updated: 2020/02/12 23:04:09 by lrosalee         ###   ########.fr       */
+/*   Updated: 2020/02/13 16:59:42 by lrosalee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int			print_f(va_list *arg, int char_printed, t_printf p)
 	{
 		nb = round_ld(nb, p);
 		integer = integer_f(nb);
-		decimal = decimal_f(nb, p, integer);
+		decimal = decimal_f(nb, &p, integer);
 		char_printed += write_f(p, integer, decimal, nb);
 		free(integer);
 		free(decimal);

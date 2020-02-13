@@ -30,7 +30,8 @@ SRCS = ft_printf.c parse.c ./char/print_cs.c \
         ./utilits/ft_print_u_hex.c ./utilits/ft_ptr_len_base.c \
         ./tools/round_ld.c ./tools/flag_manager_f.c \
         ./numbers/float_to_string.c ./utilits/ft_memalloc.c \
-        ./utilits/ft_put_longlong_base.c ./utilits/ft_len_base.c\
+        ./utilits/ft_put_longlong_base.c ./utilits/ft_len_base.c \
+        ./utilits/ft_itoa.c
 
 
 
@@ -52,7 +53,7 @@ OBJS = ./ft_printf.o ./parse.o ./print_cs.o \
          ./ft_ptr_len_base.o \
          round_ld.o flag_manager_f.o float_to_string.o \
          ft_memalloc.o ft_put_longlong_base.o \
-         ft_len_base.o \
+         ft_len_base.o ft_itoa.o\
 
 
 

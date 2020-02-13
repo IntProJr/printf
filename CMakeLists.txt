@@ -54,4 +54,5 @@ add_executable(printf ft_printf.c ft_printf.h parse.c main.c
 		numbers/float_to_string.c
 		utilits/ft_memalloc.c
 		utilits/ft_len_base.c
-		utilits/ft_put_longlong_base.c)
+		utilits/ft_put_longlong_base.c
+		utilits/ft_itoa.c)
